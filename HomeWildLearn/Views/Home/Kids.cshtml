@@ -2,6 +2,27 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<style>
+    .containers .btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        background-color: #555;
+        color: white;
+        font-size: 16px;
+        padding: 12px 24px;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+        text-align: center;
+    }
+
+        .containers .btn:hover {
+            background-color: black;
+        }
+</style>
 
 <div class="row">
     <div class="col-lg-12">
@@ -17,3 +38,79 @@
         </ol>
     </div>
 </div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <img src="http://placehold.it/1200x300" class="img-responsive">
+    </div>
+</div>
+
+<hr>
+
+
+<div class=" text-center">
+    <div class="container">
+        <div class="col-lg-12" align="center">
+            <h3>Search...<small>for Wild-Animals</small></h3>
+            <div class="input-group">
+                <input type="text" class="form-control" placeholder="Search..">
+                <span class="input-group-btn">
+                    <button type="button" class="btn btn-primary">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </div>
+    </div>
+    <!-- /.container -->
+</div>
+<hr>
+<div class="containers" align="center">
+    <div class="row">
+        <div class="col-md-6" align="left">
+            <a href="@Url.Action("Kids")">
+                <img class="img-responsive" src="~/Content/kids.jpg">
+                <button class="btn">Kids</button>
+            </a>
+        </div>
+
+        <div class="col-md-6" align="left">
+            <a href="@Url.Action("Kids")">
+                <img class="img-responsive" src="~/Content/kids.jpg">
+                <button class="btn">Kids</button>
+            </a>
+        </div>
+        <br>
+        <hr>
+        <div class="col-md-6" align="left">
+            <a href="@Url.Action("Kids")">
+                <img class="img-responsive" src="~/Content/kids.jpg">
+                <button class="btn">Kids</button>
+            </a>
+        </div>
+
+        <div class="col-md-6" align="left">
+            <a href="@Url.Action("Kids")">
+                <img class="img-responsive" src="~/Content/kids.jpg">
+                <button class="btn">Kids</button>
+            </a>
+        </div>
+        <br>
+        <hr>
+        <div class="col-md-6" align="left">
+            <a href="@Url.Action("Kids")">
+                <img class="img-responsive" src="~/Content/kids.jpg">
+                <button class="btn">Kids</button>
+            </a>
+        </div>
+
+        <div class="col-md-6" align="right">
+            <a href="@Url.Action("Parents")">
+                <img class="img-responsive" src="~/Content/kids.jpg">
+                <button class="btn">Parents</button>
+            </a>
+        </div>
+    </div>
+    <!-- /.row -->
+</div>
+<!-- /.container -->
