@@ -10,8 +10,9 @@
 
     <link href="@Url.Content("/css/bootstrap.css")" rel="stylesheet">
     <link href="@Url.Content("/css/modern-business.css")" rel="stylesheet">
-    <link href="@Url.Content("/lib/font-awesome/css/fontawesome.css")" rel="stylesheet">
-         
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
+    @*<link href="@Url.Content("/lib/font-awesome/css/fontawesome.css")" rel="stylesheet">*@
+
 </head>
 <body>
     <div class="navbar navbar-inverse navbar-fixed-top">
@@ -37,6 +38,17 @@
                     </li>
                     <li id="about">
                         @Html.ActionLink("About", "About", "Home")
+                    </li>
+                    <li id="blog" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li id="bloghome1">
+                                @Html.ActionLink("English", "Home1", "Blog")
+                            </li>
+                            <li id="bloghome2">
+                                @Html.ActionLink("Spanish", "Home2", "Blog")
+                            </li> 
+                        </ul>
                     </li>
                     @Html.Partial("_LoginPartial")
                 </ul>                
