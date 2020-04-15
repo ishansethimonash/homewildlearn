@@ -206,7 +206,15 @@
     <Content Include="Content\car.jpg" />
     <Content Include="Content\ishan.jpeg" />
     <Content Include="Content\jin.jpeg" />
+    <Content Include="Content\jungle.mp4" />
+    <Content Include="Content\kid.jpg" />
     <Content Include="Content\kids.jpg" />
+    <Content Include="Content\parent.jpg" />
+    <Content Include="Content\pic1.jpg" />
+    <Content Include="Content\pic2.jpg" />
+    <Content Include="Content\rain2.jpg" />
+    <Content Include="Content\rainforest-during-foggy-day-975771 %281%29.jpg" />
+    <Content Include="Content\rainforest.jpg" />
     <Content Include="Content\shah.jpeg" />
     <Content Include="Content\teamlogo.jpg" />
     <Content Include="Content\yum.jpeg" />
