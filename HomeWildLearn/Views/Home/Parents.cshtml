@@ -33,7 +33,7 @@
         </div>
         <div class="col-md-4">
             <h2 class="page-header">Want to help the Wildlife?</h2>
-                <p>To be filled</p>           
+            <p>To be filled</p>
             <a href="#" class="btn btn-primary">Click here!!</a>
         </div>
     </div>
@@ -99,4 +99,151 @@
     <!-- /.row -->
 </div>
 
+<div class="section-colored text-center">
 
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <h1>Looking for hikes or camping areas?<small>View the map</small></h1>
+                <hr>
+            </div>
+        </div>
+        <!-- /.row -->
+
+    </div>
+    <!-- /.container -->
+
+</div>
+
+
+<style>
+
+    #map {
+        height: 60%;
+    }
+    #title {
+        color: red;
+        background-color: yellow;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+    }
+    input[type=text], select {
+        width: 60%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+</style>
+
+<input id="pac-input" type="text" placeholder="Search Place....">
+<div id="map" style="padding-top:900px"></div>
+
+<script>
+    function initAutocomplete() {
+        var map = new google.maps.Map(document.getElementById('map'), {
+            center: { lat: -38.958992, lng: 146.367476 },
+            zoom: 12,
+            mapTypeId: 'roadmap'
+        });
+
+        var markerB = new google.maps.Marker({
+            position: { lat: -39.025145, lng: 146.305479},
+            map: map
+        });
+
+        var markerC = new google.maps.Marker({
+            position: { lat: -38.993126, lng: 146.255494},
+            map: map,
+            title: "Hello"
+
+        });
+
+        var contentString = '<div id="content"><h1>Toungue Point</h1><p>A brilliant coastal walk to the tip of Tongue Point, where giant boulders tower above and the ocean drops away into the deep blue just meters from the edge. The environment is weathered yet beautiful, and the wildlife isn’t shy, often seen foraging close to the walking trails. Yes, the Tongue Point walk is one of many on Wilson Prom, but it’s truly unique and definitely worth adding to the adventure list!</p></div>';
+
+       var infowindow = new google.maps.InfoWindow({
+	content: contentString
+        });
+
+        markerC.addListener('click', function() {
+	    infowindow.open(map, markerC);
+        });
+
+       @* var contentStringB = '<div id="contentB"><h1>Squeaky Beach</h1><p>Take a wander along the famous white sand of Squeaky Beach and have a dip in the turquoise waters of one of Wilsons Promontory's most iconic beaches. The rounded grains of quartz make a squeaking sound when you walk, giving this popular local beach its name.</p></div>';
+
+
+        var infowindowB = new google.maps.InfoWindow({
+	content: contentStringB
+        });
+
+        markerB.addListener('click', function() {
+	    infowindowB.open(map, markerB);
+        }); *@
+
+
+        var input = document.getElementById('pac-input');
+        var searchBox = new google.maps.places.SearchBox(input);
+        map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
+
+
+        map.addListener('bounds_changed', function () {
+            searchBox.setBounds(map.getBounds());
+        });
+
+        var markers = [];
+
+        searchBox.addListener('places_changed', function () {
+            var places = searchBox.getPlaces();
+
+            if (places.length == 0) {
+                return;
+            }
+
+
+            markers.forEach(function (marker) {
+                marker.setMap(null);
+            });
+            markers = [];
+
+
+            var bounds = new google.maps.LatLngBounds();
+            places.forEach(function (place) {
+                if (!place.geometry) {
+                    console.log("Returned place contains no geometry");
+                    return;
+                }
+                var icon = {
+                    url: place.icon,
+                    size: new google.maps.Size(71, 71),
+                    origin: new google.maps.Point(0, 0),
+                    anchor: new google.maps.Point(17, 34),
+                    scaledSize: new google.maps.Size(25, 25)
+                };
+
+
+                markers.push(new google.maps.Marker({
+                    map: map,
+                    icon: "Flag.jpg",
+                    title: place.name,
+                    position: place.geometry.location,
+                    animation: google.maps.Animation.BOUNCE
+                }));
+
+                if (place.geometry.viewport) {
+
+                    bounds.union(place.geometry.viewport);
+                } else {
+                    bounds.extend(place.geometry.location);
+                }
+            });
+            map.fitBounds(bounds);
+        });
+    }
+
+</script>
+
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDw6UmJSbIyVdFGzZRvutTSBLsC8iBow8&libraries=places&callback=initAutocomplete"></script>
