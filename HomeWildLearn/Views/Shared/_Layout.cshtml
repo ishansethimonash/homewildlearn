@@ -30,12 +30,35 @@
                     <li>
                         @Html.ActionLink("Kids", "kids", "Home")
                     </li>
+                    <li id="blog" class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PlayField <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li id="bloghome1">
+                                @Html.ActionLink("Animals Around Me!", "AnimalsAroundMe", "Home")
+                            </li>
+                            <li id="bloghome2">
+                                @Html.ActionLink("Looking For Wild Animals?", "Home2", "Blog")
+                            </li>
+                            <li id="bloghome3">
+                                @Html.ActionLink("Wondering how animals Migrate?", "Home2", "Blog")
+                            </li>
+                            <li id="bloghome4">
+                                @Html.ActionLink("Interesting Facts", "Home2", "Blog")
+                            </li>
+                            <li id="bloghome5">
+                                @Html.ActionLink("Where to go now? Zoo, forest or park?", "Home2", "Blog")
+                            </li>
+                            <li id="bloghome6">
+                                @Html.ActionLink("Want to Learn Camping?", "Home2", "Blog")
+                            </li>
+                        </ul>
+                    </li>
                     <li>
                         @Html.ActionLink("Parents", "Parents", "Home")
                     </li>
-                    <li>
+                    @*<li>
                         @Html.ActionLink("Find WildLife", "AnimalsAroundMe", "Home")
-                    </li>
+                    </li>*@
                     <li>
                         @Html.ActionLink("What's new", "Whatsnew", "Home")
                     </li>
@@ -50,7 +73,7 @@
                             </li>
                             <li id="bloghome2">
                                 @Html.ActionLink("Spanish", "Home2", "Blog")
-                            </li> 
+                            </li>
                         </ul>
                     </li>
                     @Html.Partial("_LoginPartial")
