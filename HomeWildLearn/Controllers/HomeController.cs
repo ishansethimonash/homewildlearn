@@ -84,6 +84,17 @@ namespace HomeWildLearn.Controllers
             return View();
         }
 
+        public ActionResult ExploreSearch()
+        {
+            //ViewBag.Message = "Your application description page.";
+
+            if (TempData["shortMessage"] != null)
+            {
+                ViewBag.Message = TempData["shortMessage"].ToString();
+            }
+            return View();
+        }
+
         public ActionResult TestYourKnowledge()
         {
             ViewBag.Message = "Your application description page.";
