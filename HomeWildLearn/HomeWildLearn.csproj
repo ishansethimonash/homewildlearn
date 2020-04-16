@@ -211,6 +211,8 @@
     <Content Include="Content\kid.jpg" />
     <Content Include="Content\kids.jpg" />
     <Content Include="Content\kidstudy.jpg" />
+    <Content Include="Content\lose.gif" />
+    <Content Include="Content\meh.jpeg" />
     <Content Include="Content\parent.jpg" />
     <Content Include="Content\pic1.jpg" />
     <Content Include="Content\pic2.jpg" />
@@ -219,12 +221,14 @@
     <Content Include="Content\rainforest.jpg" />
     <Content Include="Content\shah.jpeg" />
     <Content Include="Content\teamlogo.jpg" />
+    <Content Include="Content\win.gif" />
     <Content Include="Content\yum.jpeg" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\modern-business.css" />
+    <Content Include="css\quiz.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -279,6 +283,9 @@
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff" />
     <Content Include="lib\font-awesome\webfonts\fa-solid-900.woff2" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
+    <Content Include="Scripts\img\lose.gif" />
+    <Content Include="Scripts\img\meh.jpeg" />
+    <Content Include="Scripts\img\win.gif" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
@@ -289,6 +296,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\location.js" />
+    <Content Include="Scripts\main.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -328,6 +336,7 @@
     <Content Include="Views\Home\Whatsnew.cshtml" />
     <Content Include="Views\Home\AnimalsAroundMe.cshtml" />
     <Content Include="Views\Home\Explore.cshtml" />
+    <Content Include="Views\Home\TestYourKnowledge.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
