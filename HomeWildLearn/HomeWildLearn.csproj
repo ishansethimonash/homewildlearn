@@ -212,10 +212,13 @@
     <Content Include="Content\kids.jpg" />
     <Content Include="Content\kidstudy.jpg" />
     <Content Include="Content\lose.gif" />
+    <Content Include="Content\mapim.jpg" />
     <Content Include="Content\meh.jpeg" />
     <Content Include="Content\parent.jpg" />
     <Content Include="Content\pic1.jpg" />
     <Content Include="Content\pic2.jpg" />
+    <Content Include="Content\question.jpg" />
+    <Content Include="Content\quiz.jpg" />
     <Content Include="Content\rain2.jpg" />
     <Content Include="Content\rainforest-during-foggy-day-975771 %281%29.jpg" />
     <Content Include="Content\rainforest.jpg" />
