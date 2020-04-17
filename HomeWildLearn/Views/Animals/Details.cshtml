@@ -9,6 +9,7 @@
 
 <div>
     <h4>Animal</h4>
+    <button type="button" onclick="location.href='@Url.Action("ExportPDF","Animals")'" class="btn btn-primary" align="center">Export as PDF</button>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -18,7 +19,6 @@
         <dd>
             @Html.DisplayFor(model => model.animal_name)
         </dd>
-
     </dl>
 </div>
 <p>

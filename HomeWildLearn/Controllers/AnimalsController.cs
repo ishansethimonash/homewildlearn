@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HomeWildLearn.Models;
+using Rotativa;
+
 
 namespace HomeWildLearn.Controllers
 {
@@ -34,6 +36,12 @@ namespace HomeWildLearn.Controllers
             }
             return View(animal);
         }
+
+        public ActionResult ExportPDF()
+        {
+            return new Rotativa.ActionAsPdf("Index");
+        }
+
 
         // GET: Animals/Create
         public ActionResult Create()
