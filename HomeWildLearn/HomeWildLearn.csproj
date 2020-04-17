@@ -216,12 +216,15 @@
     <Content Include="App_Data\aspnet-HomeWildLearn-20200413071054_log.ldf">
       <DependentUpon>aspnet-HomeWildLearn-20200413071054.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\bino.jpg" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\camp.jpg" />
     <Content Include="Content\car.jpg" />
     <Content Include="Content\emu.jpg" />
+    <Content Include="Content\exp.jpg" />
     <Content Include="Content\images\ui-icons_444444_256x240.png" />
     <Content Include="Content\images\ui-icons_555555_256x240.png" />
     <Content Include="Content\images\ui-icons_777620_256x240.png" />
@@ -237,13 +240,18 @@
     <Content Include="Content\kid.jpg" />
     <Content Include="Content\kids.jpg" />
     <Content Include="Content\kidstudy.jpg" />
+    <Content Include="Content\learn.jpg" />
     <Content Include="Content\lose.gif" />
+    <Content Include="Content\mag.jpg" />
     <Content Include="Content\mapim.jpg" />
     <Content Include="Content\meh.jpeg" />
+    <Content Include="Content\migrate.jpg" />
+    <Content Include="Content\par.jpg" />
     <Content Include="Content\parent.jpg" />
     <Content Include="Content\pic1.jpg" />
     <Content Include="Content\pic2.jpg" />
     <Content Include="Content\question.jpg" />
+    <Content Include="Content\qui.jpg" />
     <Content Include="Content\quiz.jpg" />
     <Content Include="Content\rain2.jpg" />
     <Content Include="Content\rainforest-during-foggy-day-975771 %281%29.jpg" />
@@ -252,6 +260,7 @@
     <Content Include="Content\teamlogo.jpg" />
     <Content Include="Content\win.gif" />
     <Content Include="Content\yum.jpeg" />
+    <Content Include="Content\zoo.jpg" />
     <Content Include="css\bootstrap-theme.css" />
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
