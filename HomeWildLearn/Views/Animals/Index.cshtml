@@ -5,30 +5,103 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+<style>
+    .layout-margin-8 {
+        margin: 3% 8%;
+    }
+
+    .card-img-top-custom {
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    .card-title {
+        text-align: center;
+    }
+
+    .card-shadow {
+        -webkit-box-shadow: 0px 0px 28px 14px rgba(232,232,232,1);
+        -moz-box-shadow: 0px 0px 28px 14px rgba(232,232,232,1);
+        box-shadow: 0px 0px 28px 14px rgba(232,232,232,1);
+    }
+
+    .card-deck {
+        display: flex;
+        justify-content: space-around;
+        flex-flow: row wrap;
+        align-items: stretch;
+    }
+
+    .card {
+        padding: 3% 1.5%;
+        border: none;
+        max-width: 375px;
+        flex-grow: 1;
+    }
+
+    @@media (min-width: 768px) {
+        .form-control {
+            width: 500px !important;
+            height: 50px;
+        }
+    }
+
+    .bg-blue {
+        background-color: #005EB8;
+    }
+</style>
 <h2>Index</h2>
 
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.animal_name)
-        </th>
-        <th></th>
-    </tr>
+<!-- Search functionality -->
+<nav class="navbar navbar-light justify-content-center mt-4">
+    <form class="form-inline">
+        <button type="button" class="btn btn-primary btn-lg mr-3" id="btnSort">Sort</button>
+        <input class="form-control form-control-lg mr-sm-2" type="search" placeholder="Type a name" aria-label="Search" id="search">
+        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
+    </form>
+</nav>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.animal_name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.animal_id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.animal_id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.animal_id })
-        </td>
-    </tr>
-}
+<!--Animal Cards -->
+<div class="layout-margin-8 mt-4">
+    <div class="card-deck">
+        @foreach (var item in Model)
+        {
+            <div class="card card-shadow text-center">
+                <div class="card-body">
+                    <h4 class="card-title">@Html.DisplayFor(modelItem => item.animal_name)</h4>
+                    <p class="card-text">Mammal</p>
+                    <div class="dropdown-divider"></div>
+                    <p class="card-text">
+                        <small class="text-muted">I am an animal</small>
+                    </p>
+                    <a href="#">
+                        @Html.ActionLink("More About me!", "Details", new { id = item.animal_id }, new { @class = "btn btn-outline-primary" })
+                    </a>
+                </div>
+            </div>
+        }
 
-</table>
+    </div>
+</div>
+
+
+
+
+
+
+<script>
+    $(document).ready(function () {
+        $('#search').keyup(function () {
+            $('.card').removeClass('d-none');
+            var filter = $(this).val(); // get the value of the input, which we filter on
+            $('.card-deck').find('.card .card-body h4:not(:contains("' + filter + '"))').parent().parent().addClass('d-none');
+        })
+
+        $('#btnSort').click(function () {
+            $('.card-deck .card').sort(function (a, b) {
+                return $(a).find(".card-title").text() > $(b).find(".card-title").text() ? 1 : -1;
+            }).appendTo(".card-deck");
+        })
+    });
+</script>
