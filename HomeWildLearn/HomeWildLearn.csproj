@@ -233,6 +233,7 @@
     <Content Include="Content\images\ui-icons_ffffff_256x240.png" />
     <Content Include="Content\ishan.jpeg" />
     <Content Include="Content\jin.jpeg" />
+    <Content Include="Content\joey.jpg" />
     <Content Include="Content\jquery-ui.css" />
     <Content Include="Content\jquery-ui.structure.css" />
     <Content Include="Content\jquery-ui.theme.css" />
@@ -388,6 +389,7 @@
     <Content Include="Views\Animals\Edit.cshtml" />
     <Content Include="Views\Animals\Index.cshtml" />
     <Content Include="Views\Home\ExploreSearch.cshtml" />
+    <Content Include="Views\Home\InterestingFacts.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />
