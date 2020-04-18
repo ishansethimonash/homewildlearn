@@ -37,9 +37,10 @@ namespace HomeWildLearn.Controllers
             return View(animal);
         }
 
-        public ActionResult ExportPDF()
+        //Method to export the details of an animal
+        public ActionResult ExportPDF(String id)
         {
-            return new Rotativa.ActionAsPdf("Index");
+            return new Rotativa.ActionAsPdf("Details/"+id);
         }
 
 

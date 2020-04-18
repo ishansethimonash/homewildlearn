@@ -9,7 +9,7 @@
 
 <div>
     <h4>Animal</h4>
-    <button type="button" onclick="location.href='@Url.Action("ExportPDF","Animals")'" class="btn btn-primary" align="center">Export as PDF</button>
+    <button type="button" onclick="location.href='@Url.Action("ExportPDF","Animals", new {id = "id"}).Replace("id", Model.animal_id.ToString())'" class="btn btn-primary" align="center">Export as PDF</button>
     <hr />
     <dl class="dl-horizontal">
         <dt>
