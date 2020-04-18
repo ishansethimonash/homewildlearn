@@ -108,5 +108,12 @@ namespace HomeWildLearn.Controllers
 
             return View();
         }
+
+        public ActionResult WhereTo()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
     }
 }

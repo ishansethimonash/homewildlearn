@@ -390,6 +390,7 @@
     <Content Include="Views\Animals\Index.cshtml" />
     <Content Include="Views\Home\ExploreSearch.cshtml" />
     <Content Include="Views\Home\InterestingFacts.cshtml" />
+    <Content Include="Views\Home\WhereTo.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Properties\PublishProfiles\" />
