@@ -8,24 +8,6 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
 
-<script>
-    $('.continue').click(function () {
-        $('.nav-tabs > .active').next('li').find('a').trigger('click');
-    });
-    $('.back').click(function () {
-        $('.nav-tabs > .active').prev('li').find('a').trigger('click');
-    });
-    </script>
-
-<style>
-    .tabs-wrap {
-        margin-top: 40px;
-    }
-
-    .tab-content .tab-pane {
-        padding: 20px 0;
-    }
-</style>
 
 <div class="container">
     <div class="row">
@@ -44,51 +26,63 @@
     </div>
 </div>
 
-<div class="section-colored text-center">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <h1>Step 1. <small>- </small></h1>
-                <hr>
+
+@*<div class="section-colored text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Step 1. <small>- </small></h1>
+                    <hr>
+                </div>
+            </div>
+        </div>
+    </div>*@
+
+<div class="container">
+    <div class="row">
+        
+        <div class="col-sm-12 product-tabs">
+
+            <ul class="nav nav-tabs">
+                <li class="active"><a href="#tab1" data-toggle="tab">Tents</a></li>
+                <li class=""><a href="#tab2" data-toggle="tab">Men Accessories</a></li>
+                <li class=""><a href="#tab3" data-toggle="tab">Women Clothings</a></li>
+                <li class=""><a href="#tab4" data-toggle="tab">Women Accessories</a></li>
+            </ul>
+            <div class="tab-content">
+                <div class="tab-pane active" id="tab1">
+                    <h1>Some Content Here for men clothings</h1>
+                </div>
+                <div class="tab-pane" id="tab2">
+                    <h1>Some Content Here for men accessories</h1>
+                </div>
+                <div class="tab-pane" id="tab3">
+                    <h1>Some Content Here for women clothings</h1>
+                </div>
+                <div class="tab-pane" id="tab4">
+                    <h1>Some Content Here for women accessories</h1>
+                </div>
+            </div>
+            <div class="tab-control" style="position:center;">
+                <a class="previous-button" role="button"><i class="fa fa-angle-left fa-3x fa-fw"></i></a>
+                <a class="next-button" role="button"><i class="fa fa-angle-right fa-3x fa-fw"></i></a>
             </div>
         </div>
     </div>
 </div>
 
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
+<script type="text/javascript">
+    $('.next-button').click(function () {
+        $('.nav-tabs > .active').next('li').find('a').trigger('click');
+        //trigger the click on the tab same like we click on the tab
+    });
 
-
-<div class="container tabs-wrap">
-    <ul class="nav nav-tabs" role="tablist">
-        <li role="presentation" class="active">
-            <a href="#billing" aria-controls="billing" role="tab" data-toggle="tab" aria-expanded="true">Billing Address</a>
-        </li>
-        <li>
-            <a href="#shipping" aria-controls="shipping" role="tab" data-toggle="tab" aria-expanded="false">Delivery Address</a>
-        </li>
-        <li>
-            <a href="#review" aria-controls="review" role="tab" data-toggle="tab" aria-expanded="false">Review &amp; Payment</a>
-        </li>
-    </ul>
-    <div class="tab-content">
-        <div role="tabpanel" class="tab-pane active" id="billing">
-            <h3 class="">Billing Address</h3>
-            <p>Billing Address Form</p>
-            <a class="btn btn-primary continue">Continue</a>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="shipping">
-            <h3 class="">Shipping Address</h3>
-            <p>Shipping Address Form</p>
-            <a class="btn btn-primary back">Go Back</a>
-            <a class="btn btn-primary continue">Continue</a>
-        </div>
-        <div role="tabpanel" class="tab-pane" id="review">
-            <h3 class="">Review &amp; Place Order</h3>
-            <p>Review &amp; Payment Tab</p>
-            <a class="btn btn-primary back">Go Back</a>
-            <a class="btn btn-primary continue">Place Order</a>
-        </div>
-    </div>
-</div>
-
-<div id="push"></div>
+    $('.previous-button').click(function () {
+        $('.nav-tabs > .active').prev('li').find('a').trigger('click');
+        //trigger the click on the tab same like we click on the tab
+    })
+</script>
