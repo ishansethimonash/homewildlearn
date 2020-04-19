@@ -115,5 +115,12 @@ namespace HomeWildLearn.Controllers
 
             return View();
         }
+
+        public ActionResult LearnCamping()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
     }
 }
