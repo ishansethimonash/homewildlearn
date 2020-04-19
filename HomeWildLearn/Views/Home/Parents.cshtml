@@ -2,6 +2,13 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">*@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+
 
 <div class="container">
     <div class="row">
@@ -47,7 +54,7 @@
         <div class="col-sm-4">
             <img src="~/Content/learn.jpg" class="img-responsive">
             <h3>Kids Learn.</h3>
-            <p>We focus on how to provide adequate knowledge which enables them to learn more.</p>            
+            <p>We focus on how to provide adequate knowledge which enables them to learn more.</p>
         </div>
         <div class="col-sm-4">
             <img src="~/Content/exp.jpg" class="img-responsive">
@@ -58,55 +65,57 @@
             <img src="~/Content/qui.jpg" class="img-responsive">
             <h3>Quiz the kid.</h3>
             <p>Our fun loving quiz module for the kid helps to check the current kowledge acquired from the contents, in this way the kid feels motivated if the result is good.</p>
-    </div>
-    <!-- /.row -->
-</div>
-
-<div class="section-colored text-center">
-
-    <div class="container">
-
-        <div class="row">
-            <div class="col-lg-12">
-                <h1>Looking for hikes or camping areas?<small>View the map</small></h1>
-                <hr>
-            </div>
         </div>
         <!-- /.row -->
+    </div>
+
+    <div class="section-colored text-center">
+
+        <div class="container">
+
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1>Looking for hikes or camping areas?<small>View the map</small></h1>
+                    <hr>
+                </div>
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container -->
 
     </div>
-    <!-- /.container -->
-
-</div>
 
 
-<style>
+    <style>
 
-    #map {
-        height: 60%;
-    }
-    #title {
-        color: red;
-        background-color: yellow;
-        font-size: 25px;
-        font-weight: 500;
-        padding: 6px 12px;
-    }
-    input[type=text], select {
-        width: 60%;
-        padding: 12px 20px;
-        margin: 8px 0;
-        display: inline-block;
-        border: 1px solid #ccc;
-        border-radius: 4px;
-        box-sizing: border-box;
-    }
-</style>
+        #map {
+            height: 60%;
+        }
 
-<input id="pac-input" type="text" placeholder="Search Place....">
-<div id="map" style="padding-top:900px"></div>
+        #title {
+            color: red;
+            background-color: yellow;
+            font-size: 25px;
+            font-weight: 500;
+            padding: 6px 12px;
+        }
 
-<script>
+        input[type=text], select {
+            width: 60%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+    </style>
+
+    <input id="pac-input" type="text" placeholder="Search Place....">
+    <div id="map" style="padding-top:900px"></div>
+
+    <script>
     function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
             center: { lat: -38.958992, lng: 146.367476 },
@@ -207,6 +216,6 @@
         });
     }
 
-</script>
+    </script>
 
-<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDw6UmJSbIyVdFGzZRvutTSBLsC8iBow8&libraries=places&callback=initAutocomplete"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDw6UmJSbIyVdFGzZRvutTSBLsC8iBow8&libraries=places&callback=initAutocomplete"></script>

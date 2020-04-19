@@ -241,12 +241,14 @@
     <Content Include="Content\kid.jpg" />
     <Content Include="Content\kids.jpg" />
     <Content Include="Content\kidstudy.jpg" />
+    <Content Include="Content\landscape.jpg" />
     <Content Include="Content\learn.jpg" />
     <Content Include="Content\lose.gif" />
     <Content Include="Content\mag.jpg" />
     <Content Include="Content\mapim.jpg" />
     <Content Include="Content\meh.jpeg" />
     <Content Include="Content\migrate.jpg" />
+    <Content Include="Content\ost.jpg" />
     <Content Include="Content\par.jpg" />
     <Content Include="Content\parent.jpg" />
     <Content Include="Content\pic1.jpg" />
@@ -259,6 +261,7 @@
     <Content Include="Content\rainforest.jpg" />
     <Content Include="Content\shah.jpeg" />
     <Content Include="Content\teamlogo.jpg" />
+    <Content Include="Content\Wild-HomeLern.png" />
     <Content Include="Content\win.gif" />
     <Content Include="Content\yum.jpeg" />
     <Content Include="Content\zoo.jpg" />
@@ -335,6 +338,7 @@
     <Content Include="Scripts\jquery-3.5.0.slim.min.map" />
     <Content Include="Scripts\jquery-3.5.0.min.map" />
     <Content Include="App_Browsers\qt.browser" />
+    <None Include="Properties\PublishProfiles\HomeWildLearn20200419011418 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-ui.js" />
     <Content Include="Scripts\jquery.validate.js" />
@@ -392,9 +396,7 @@
     <Content Include="Views\Home\InterestingFacts.cshtml" />
     <Content Include="Views\Home\WhereTo.cshtml" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Properties\PublishProfiles\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
