@@ -3,101 +3,67 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - Wild-HomeLearn</title>
-
-    @*@Styles.Render("~/Content/css")
-        @Scripts.Render("~/bundles/modernizr")*@
-
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-   
-    <link href="@Url.Content("/css/bootstrap.css")" rel="stylesheet">
-    <link href="@Url.Content("/css/modern-business.css")" rel="stylesheet">
-    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.1.0/css/font-awesome.min.css" rel="stylesheet">
-    @*<link href="@Url.Content("/lib/font-awesome/css/fontawesome.css")" rel="stylesheet">*@
-
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <nav class="navbar navbar-expand-lg fixed-top navbar-dark" style="background-color: #5c2040" >
         <div class="container-fluid">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
-                @Html.ActionLink("Wild-HomeLearn", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-            </div>
-            <div class="collapse navbar-collapse navbar-ex1-collapse">
-                <ul class="nav navbar-nav navbar-right" style="margin-right:0px;">
-                    <li>
-                        @Html.ActionLink("Kids", "kids", "Home")
+            @Html.ActionLink("Wild-HomeLearn", "Index", "Home", new { area = ""}, new {@class = "navbar-brand"})
+            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target=".navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav  ml-auto">
+                    <li class="nav-item">@Html.ActionLink("Home", "Index", "Home", new {@class = "nav-link"})</li>
+                    <li class="nav-item">@Html.ActionLink("Kids", "Kids", "Home",new {@class = "nav-link"})</li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Playfield
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="@Url.Action(" AnimalsAroundMe", "Home" )">Animals Around Me!</a>
+                            <a class="dropdown-item" href="@Url.Action(" TestYourKnowledge", "Home" )">Let's Test Your Knowledge</a>
+                            <a class="dropdown-item" href="@Url.Action(" Index", "AnimalInfo" )">Explore Wild-Animals</a>
+                            <a class="dropdown-item" href="@Url.Action(" AnimalMigrate", "Home" )">Wondering how animals Migrate?</a>
+                            <a class="dropdown-item" href="@Url.Action(" InterestingFacts", "Home" )">Interesting Factsr</a>
+                            <a class="dropdown-item" href="@Url.Action(" Where to go now? Zoo, forest or park?", "Home" )">Register</a>
+                            <a class="dropdown-item" href="@Url.Action(" Want to Learn Camping?", "Home" )">Register</a>
+                        </div>
                     </li>
-                    <li id="blog" class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">PlayField <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li id="bloghome1">
-                                @Html.ActionLink("Animals Around Me!", "AnimalsAroundMe", "Home")
-                            </li>
-                            <li id="bloghome7">
-                                @Html.ActionLink("Let's Test Your Knowledge", "TestYourKnowledge", "Home")
-                            </li>
-                            <li id="bloghome2">
-                                @Html.ActionLink("Explore Wild-Animals", "ExploreSearch", "Home")
-                            </li>
-                            <li id="bloghome3">
-                                @Html.ActionLink("Wondering how animals Migrate?", "Home2", "Blog")
-                            </li>
-                            <li id="bloghome4">
-                                @Html.ActionLink("Interesting Facts", "InterestingFacts", "Home")
-                            </li>
-                            <li id="bloghome5">
-                                @Html.ActionLink("Where to go now? Zoo, forest or park?", "WhereTo", "Home")
-                            </li>
-                            <li id="bloghome6">
-                                @Html.ActionLink("Want to Learn Camping?", "Home2", "Blog")
-                            </li>
-                        </ul>
+                    <li class="nav-item">@Html.ActionLink("Parents", "Parents", "Home", new {@class = "nav-link"})</li>
+                    <li class="nav-item">@Html.ActionLink("What's new", "Whatsnew", "Home", new {@class = "nav-link"})</li>
+                    <li class="nav-item">@Html.ActionLink("About", "About", "Home", new {@class = "nav-link"})</li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+                            Language
+                        </a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="@Url.Action(" English", "Home" )">English</a>
+                            <a class="dropdown-item" href="@Url.Action(" French", "Home" )">French</a>
+                        </div>
                     </li>
-                    <li>
-                        @Html.ActionLink("Parents", "Parents", "Home")
-                    </li>
-                    @*<li>
-                        @Html.ActionLink("Find WildLife", "AnimalsAroundMe", "Home")
-                    </li>*@
-                    <li>
-                        @Html.ActionLink("What's new", "Whatsnew", "Home")
-                    </li>
-                    <li id="about">
-                        @Html.ActionLink("About", "About", "Home")
-                    </li>
-                    <li id="blog" class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Language <b class="caret"></b></a>
-                        <ul class="dropdown-menu">
-                            <li id="bloghome1">
-                                @Html.ActionLink("English", "Home1", "Blog")
-                            </li>
-                            <li id="bloghome2">
-                                @Html.ActionLink("Spanish", "Home2", "Blog")
-                            </li>
-                        </ul>
-                    </li>
-                    @Html.Partial("_LoginPartial")
-                </ul>                
+                </ul>
+
             </div>
         </div>
-    </div>
-    <div class=" body-content">
+    </nav>
+    <div class="body-content">
         @RenderBody()
         <hr />
         <footer>
-            <p class="pull-right"><a href="#">Back to top</a></p>
+            <p class="float-right"><a href="#">Back to top</a></p>
             <p>&copy;  @DateTime.Now.Year - Wild-HomeLearn &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
         </footer>
     </div>
 
-   
-    
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
     @RenderSection("scripts", required: false)
 </body>
 </html>
