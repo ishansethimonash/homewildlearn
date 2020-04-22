@@ -5,70 +5,132 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-success fixed-top">
-        @Html.ActionLink("Wild-HomeLearn", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarColor01">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link lead" href="@Url.Action("Index", "Home" )">Home <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link lead" href="@Url.Action("Kids", "Home" )">Kids</a>
-                </li>
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle lead" href="#" id="navbardrop" data-toggle="dropdown">
-                        Playfield
-                    </a>
-                    <div class="dropdown-menu">
-                        <a class="dropdown-item lead" href="@Url.Action("AnimalsAroundMe", "Home" )">Animals Around Me!</a>
-                <a class="dropdown-item lead" href="@Url.Action("TestYourKnowledge", "Home" )">Let's Test Your Knowledge</a>
-                <a class="dropdown-item lead" href="@Url.Action("Index", "AnimalInfo" )">Explore Wild-Animals</a>
-                <a class="dropdown-item lead" href="@Url.Action("AnimalMigrate", "Home" )">Wondering how animals Migrate?</a>
-                <a class="dropdown-item lead" href="@Url.Action("InterestingFacts", "Home" )">Interesting Facts</a>
-                <a class="dropdown-item lead" href="@Url.Action("Whereto", "Home" )">Where to go now? Zoo, forest or park?</a>
-                <a class="dropdown-item lead" href="@Url.Action("LearnCamping", "Home" )">Want to Learn Camping?</a>
-                
+    <div class="container">
+        <div class="container-fluid">
+            <nav class="navbar navbar-expand-lg navbar-dark bg-primary  fixed-top">
+                @Html.ActionLink("Wild-HomeLearn", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarColor01">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link " href="@Url.Action("Index", "Home" )">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="@Url.Action("Kids", "Home" )">Kids</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
+                                Playfield
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item " href="@Url.Action("AnimalsAroundMe", "Home" )">Animals Around Me!</a>
+                                <a class="dropdown-item " href="@Url.Action("TestYourKnowledge", "Home" )">Let's Test Your Knowledge</a>
+                                <a class="dropdown-item " href="@Url.Action("Index", "AnimalInfo" )">Explore Wild-Animals</a>
+                                <a class="dropdown-item " href="@Url.Action("AnimalMigrate", "Home" )">Wondering how animals Migrate?</a>
+                                <a class="dropdown-item " href="@Url.Action("InterestingFacts", "Home" )">Interesting Facts</a>
+                                <a class="dropdown-item " href="@Url.Action("Whereto", "Home" )">Where to go now? Zoo, forest or park?</a>
+                                <a class="dropdown-item " href="@Url.Action("LearnCamping", "Home" )">Want to Learn Camping?</a>
+
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="@Url.Action("Parents", "Home" )">Parents</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="@Url.Action("About", "Home" )">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link " href="@Url.Action("Whatsnew", "Home" )">What's New</a>
+                        </li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
+                                Language
+                            </a>
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item " href="@Url.Action(" English", "Home" )">English</a>
+                                <a class="dropdown-item " href="@Url.Action(" French", "Home" )">French</a>
+                            </div>
+                        </li>
+                    </ul>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                        <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
+                    </form>
+                </div>
+            </nav>
         </div>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link lead" href="@Url.Action("Parents", "Home" )">Parents</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link lead" href="@Url.Action("About", "Home" )">About</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link lead" href="@Url.Action("Whatsnew", "Home" )">What's New</a>
-        </li>
-        <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle lead" href="#" id="navbardrop" data-toggle="dropdown">
-                Language
-            </a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item lead" href="@Url.Action(" English", "Home" )">English</a>        
-        <a class="dropdown-item lead" href="@Url.Action(" French", "Home" )">French</a>
-        </div>
-        </li>
-        </ul>
-        <form class="form-inline my-2 my-lg-0">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-secondary my-2 my-sm-0" type="submit">Search</button>
-        </form>
-        </div>
-    </nav>
-    <div class="body-content">
+    </div>
+    <style>
+
+        #button {
+            display: inline-block;
+            background-color: #FF9800;
+            width: 50px;
+            height: 50px;
+            text-align: center;
+            border-radius: 4px;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            transition: background-color .3s, opacity .5s, visibility .5s;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1000;
+        }
+
+            #buttontop::after {
+                content: "\f077";
+                font-family: FontAwesome;
+                font-weight: normal;
+                font-style: normal;
+                font-size: 2em;
+                line-height: 50px;
+                color: #fff;
+            }
+
+            #buttontop:hover {
+                cursor: pointer;
+                background-color: #333;
+            }
+
+            #buttontop:active {
+                background-color: #555;
+            }
+
+            #buttontop.show {
+                opacity: 1;
+                visibility: visible;
+            }
+
+    </style>
+    <script>
+        var btn = $('#buttontop');
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > 300) {
+                btn.addClass('show');
+            } else {
+                btn.removeClass('show');
+            }
+        });
+
+        btn.on('click', function (e) {
+            e.preventDefault();
+            $('html, body').animate({ scrollTop: 0 }, '300');
+        });
+
+    </script>
+    <div>
         @RenderBody()
+        <a id="buttontop"></a>
         <hr />
         <footer>
-            <p class="float-right"><a href="#">Back to top</a></p>
+            <p class="float-right"><a href="#" class="btn-danger">Back to top</a></p>
             <p>&copy;  @DateTime.Now.Year - Wild-HomeLearn &middot; <a href="#">Privacy</a> &middot; <a href="#">Terms</a></p>
         </footer>
     </div>
