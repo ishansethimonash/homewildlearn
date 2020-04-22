@@ -4,97 +4,12 @@
 
 
 
-@*<style>
-        * {
-            box-sizing: border-box;
-        }
-
-        body {
-            font: 16px Arial;
-        }
-
-        /*the container must be positioned relative:*/
-        .autocomplete {
-            position: relative;
-            display: inline-block;
-        }
-
-        input {
-            border: 1px solid transparent;
-            background-color: #f1f1f1;
-            padding: 10px;
-            font-size: 16px;
-        }
-
-            input[type=text] {
-                background-color: #f1f1f1;
-                width: 100%;
-            }
-
-            input[type=submit] {
-                background-color: DodgerBlue;
-                color: #fff;
-                cursor: pointer;
-            }
-
-        .autocomplete-items {
-            position: absolute;
-            border: 1px solid #d4d4d4;
-            border-bottom: none;
-            border-top: none;
-            z-index: 99;
-            /*position the autocomplete items to be the same width as the container:*/
-            top: 100%;
-            left: 0;
-            right: 0;
-        }
-
-            .autocomplete-items div {
-                padding: 10px;
-                cursor: pointer;
-                background-color: #fff;
-                border-bottom: 1px solid #d4d4d4;
-            }
-
-                /*when hovering an item:*/
-                .autocomplete-items div:hover {
-                    background-color: #e9e9e9;
-                }
-
-        /*when navigating through the items using the arrow keys:*/
-        .autocomplete-active {
-            background-color: DodgerBlue !important;
-            color: #ffffff;
-        }
-    </style>*@
-
-@*@Scripts.Render("~/bundles/jqueryui")
-
-    <script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
-
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">*@
-
-
-
-
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
 
 <style>
-    #containers .btn {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        background-color: #555;
-        color: white;
-        font-size: 16px;
-        padding: 12px 24px;
-        border: none;
-        cursor: pointer;
-        border-radius: 5px;
-        text-align: center;
-    }
-
     .containers .btn:hover {
         background-color: black;
     }
@@ -105,17 +20,8 @@
     }
 </style>
 
-<style>
-    /* Make the image fully responsive */
 
-</style>
-
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
-
-
+<!-- Carousel-Start -->
 <div>
     <div class="section" style="padding:0px">
         <div id="demo" class="carousel slide" data-ride="carousel">
@@ -125,7 +31,6 @@
                 <li data-target="#demo" data-slide-to="1"></li>
                 <li data-target="#demo" data-slide-to="2"></li>
             </ul>
-
             <!-- The slideshow -->
             <div class="carousel-inner">
                 <div class="carousel-item active">
@@ -135,10 +40,9 @@
                     <img src="~/Content/pic1.jpg" alt="wilsons prom" style="width:100%;">
                 </div>
                 <div class="carousel-item">
-                    <img src="~/Content/pic2.jpg" alt="New York" style="width:100%;">
+                    <img src="~/Content/pic2.jpg" alt="KID" style="width:100%;">
                 </div>
             </div>
-
             <!-- Left and right controls -->
             <a class="carousel-control-prev" href="#demo" data-slide="prev">
                 <span class="carousel-control-prev-icon"></span>
@@ -150,3 +54,24 @@
     </div>
 </div>
 <hr>
+<!-- Carousel-End -->
+
+<div class="container" id="containers" align="center">
+    <div class="row">
+        <h1></h1>
+        <div class="col-md-6" align="left">
+            <a href="@Url.Action("Kids")">
+                <img class="img-responsive" src="~/Content/kid.jpg">
+                <button class="btn">Kids - Click here !!"</button>
+            </a>
+        </div>
+        <h1></h1>
+        <div class="col-md-6" align="right">
+            <a href="@Url.Action("Parents")">
+                <img class="img-responsive" src="~/Content/parent.jpg">
+                <button class="btn">Parents - Click here !!"</button>
+            </a>
+        </div>
+    </div>
+    <hr>
+</div>

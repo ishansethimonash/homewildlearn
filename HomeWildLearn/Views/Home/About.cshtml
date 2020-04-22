@@ -5,16 +5,14 @@
         <div class="col-lg-12">
             <h1 class="page-header">
                 About
-                <small>It's Nice to Meet You!</small>
+                <small class="text-muted">It's Nice to Meet You!</small>
             </h1>
             <ol class="breadcrumb">
-                <li>
-                    @Html.ActionLink("Home", "Index", "Home")
-                </li>
-                <li class="active">About</li>
+                <li class="breadcrumb-item"><a href="@Url.Action("Index", "Home" )">Home</a></li>
+                <li class="breadcrumb-item active">About</li>
             </ol>
         </div>
-    </div>
+        
     <div class="row">
         <div class="col-md-6">
             <img src="http://placehold.it/750x450" class="img-responsive">
