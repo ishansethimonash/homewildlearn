@@ -229,6 +229,7 @@
     <Content Include="Content\car.jpg" />
     <Content Include="Content\emu.jpg" />
     <Content Include="Content\exp.jpg" />
+    <Content Include="Content\images\boys.jpg" />
     <Content Include="Content\images\greenback.jpg" />
     <Content Include="Content\images\curology-A9CUBfntOFQ-unsplash.jpg" />
     <Content Include="Content\images\flaticon\backup.txt" />
@@ -254,6 +255,7 @@
     <Content Include="Content\images\img_5.jpg" />
     <Content Include="Content\images\img_6.jpg" />
     <Content Include="Content\images\kid_transparent.png" />
+    <Content Include="Content\images\parents1.jpg" />
     <Content Include="Content\images\person_1.jpg" />
     <Content Include="Content\images\person_2.jpg" />
     <Content Include="Content\images\person_3.jpg" />
