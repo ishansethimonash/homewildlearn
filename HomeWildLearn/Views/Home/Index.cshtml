@@ -1,51 +1,149 @@
-﻿
+﻿<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
+<style>
+    .counter {
+        background-color: #f5f5f5;
+        padding: 20px 0;
+        border-radius: 5px;
+    }
+
+    .count-title {
+        font-size: 40px;
+        font-weight: normal;
+        margin-top: 10px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .count-text {
+        font-size: 13px;
+        font-weight: normal;
+        margin-top: 10px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .fa-2x {
+        margin: 0 auto;
+        float: none;
+        display: table;
+        color: #4ad1e5;
+    }
+</style>
+
 <div class="ftco-blocks-cover-1">
     <!-- data-stellar-background-ratio="0.5" style="background-image: url('images/hero_1.jpg')" -->
     <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('../Content/images/hero_1.jpg')">
         <div class="container">
             <div class="row align-items-center ">
                 <div class="col-md-5 mt-5 pt-5">
-                    <span class="text-cursive h5 text-red">Welcome To Our Website</span>
-                    <h1 class="mb-3 font-weight-bold text-teal">Packages</h1>
-                    <p><a href="index.html" class="text-white">Home</a> <span class="mx-3">/</span> <strong>Packages</strong></p>
+                    <span class="text-cursive h2 text-red">Welcome To Wild-HomeLearn</span>
+                    <p><a href="#" class="text-yellow">Home </a></p>
                 </div>
 
             </div>
         </div>
     </div>
 </div>
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="block-2 red">
+                    <span class="wrap-icon">
+                        <span class="icon-child"></span>
+                    </span>
+                    <h2>Wild Kids</h2>
+                    <p>By analyzing children's preferences and learning characteristics, we designed interactive teaching models that are attractive to children. Children's attention is captured by video to study and learn about Australian wildlife, and the learning results are detected by interactive game mode to ensure the quality of children's learning.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block-2 yellow">
+                    <span class="wrap-icon">
+                        <span class="icon-paw"></span>
+                    </span>
+                    <h2>Wild Learn</h2>
+                    <p>Wild HomeLearn is a non-profit online learning platform focusing on Australian ecosystems. We are committed to helping people learn about Australia's wildlife through our free policy. We focus on helping children living in Australia learn about their native wild animals and camping. Therefore we ensure the best qualit of knowledge to you.</p>
+                </div>
+            </div>
 
+        </div>
+    </div>
+</div>
+<div class="site-section py-5 bg-warning">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 d-flex">
+                <h2 class="text-white m-0">Hey Kids  <small>- Do you secretly want to  check your knowledge about wildlife?</small></h2>
+                <p><a href="@Url.Action("TestYourKnowledge")" class="btn btn-primary btn-custom-1 mt-4">Do it..</a></p>
+            </div>
+        </div>
+    </div>
+</div>
 <div class="site-section bg-info">
     <div class="container">
         <div class="row mb-5">
             <div class="col-12 text-center">
-                <span class="text-cursive h5 text-red d-block">Packages You Like</span>
-                <h2 class="text-white">Our Packages</h2>
+                <h1 class="text-white">Things you're looking for are here...</h1>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-4">
                 <div class="package text-center bg-white">
-                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/001-jigsaw.svg" alt="Image" class="img-fluid"></span>
-                    <h3 class="text-teal">Indoor Games</h3>
-                    <p>Lorem ipsum dolor sit amet. Consequatur aliquam, fuga maiores amet quo corporis distinctio soluta recusandae?</p>
+                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/pawprint.svg" alt="Image" class="img-fluid"></span>
+                    <h3 class="text-teal">Animals Around Me !</h3>
+                    <p> Lets's check which animals are around me.  </p>
+                    <p><a href="@Url.Action("AnimalsAroundMe")" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="package text-center bg-white">
+                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/australia.svg" alt="Image" class="img-fluid"></span>
+                    <h3 class="text-teal">Expolore Wild-Animals</h3>
+                    <p>Let's explore more about wild animals. Search on!</p>
+                    <p><a href="@Url.Action("ExploreSearch")" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="package text-center bg-white">
+                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/birds.svg" alt="Image" class="img-fluid"></span>
+                    <h3 class="text-teal">How animals Migrate?</h3>
+                    <p>Wondering how animals migrate? Lets find out!!</p>
                     <p><a href="#" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
                 </div>
             </div>
+        </div>
+        <hr>
+        <div class="row">
             <div class="col-lg-4">
                 <div class="package text-center bg-white">
-                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/002-target.svg" alt="Image" class="img-fluid"></span>
-                    <h3 class="text-success">Outdoor Game and Event</h3>
-                    <p>Lorem ipsum dolor sit amet. Consequatur aliquam, fuga maiores amet quo corporis distinctio soluta recusandae?</p>
-                    <p><a href="#" class="btn btn-warning btn-custom-1 mt-4">Learn More</a></p>
+                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/search.svg" alt="Image" class="img-fluid"></span>
+                    <h3 class="text-teal">Interesting Facts</h3>
+                    <p> Learn some cool and interesting facts about wildlife.</p>
+                    <p><a href="@Url.Action("InterestingFacts")" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
                 </div>
             </div>
+
             <div class="col-lg-4">
                 <div class="package text-center bg-white">
-                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/003-mission.svg" alt="Image" class="img-fluid"></span>
-                    <h3 class="text-danger">Camping for Kids</h3>
-                    <p>Lorem ipsum dolor sit amet. Consequatur aliquam, fuga maiores amet quo corporis distinctio soluta recusandae?</p>
-                    <p><a href="#" class="btn btn-success btn-custom-1 mt-4">Learn More</a></p>
+                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/forest.svg" alt="Image" class="img-fluid"></span>
+                    <h3 class="text-teal">Where to go Zoo, Forest or Park</h3>
+                    <p>Confused? Can't decide where to go for wild animal lookout?</p>
+                    <p><a href="@Url.Action("WhereTo")" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="package text-center bg-white">
+                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/camping-tent.svg" alt="Image" class="img-fluid"></span>
+                    <h3 class="text-teal">Want to learn "CAMPING?"</h3>
+                    <p>Do you want to experience and learn camping?</p>
+                    <p><a href="#" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
                 </div>
             </div>
         </div>
@@ -56,82 +154,144 @@
     <div class="container">
         <div class="row mb-5">
             <div class="col-12 text-center">
-                <span class="text-cursive h5 text-red d-block">Testimonial</span>
-                <h2 class="text-black">What Our Client Says About Us</h2>
+                <span class="text-cursive h5 text-red d-block">Lets look how many animals actually are their in Australia..</span>
+                <h2 class="text-black">What numbers says? Lets find out..</h2>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-8">
-                <div class="testimonial-3-wrap">
 
-                    <div class="owl-carousel nonloop-block-13">
-                        <div class="testimonial-3 d-flex">
-                            <div class="vcard-wrap mr-5">
-                                <img src="~/Content/images/person_1.jpg" alt="Image" class="vcard img-fluid">
-                            </div>
-                            <div class="text">
-                                <h3>Jeff Woodland</h3>
-                                <p class="position">Partner</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam earum libero rem maxime magnam. Similique esse ab earum, autem consectetur.</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-3 d-flex">
-                            <div class="vcard-wrap mr-5">
-                                <img src="~/Content/images/person_3.jpg" alt="Image" class="vcard img-fluid">
-                            </div>
-                            <div class="text">
-                                <h3>Jeff Woodland</h3>
-                                <p class="position">Partner</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam earum libero rem maxime magnam. Similique esse ab earum, autem consectetur.</p>
-                            </div>
-                        </div>
-                        <div class="testimonial-3 d-flex">
-                            <div class="vcard-wrap mr-5">
-                                <img src="~/Content/images/person_2.jpg" alt="Image" class="vcard img-fluid">
-                            </div>
-                            <div class="text">
-                                <h3>Jeff Woodland</h3>
-                                <p class="position">Partner</p>
-                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam earum libero rem maxime magnam. Similique esse ab earum, autem consectetur.</p>
-                            </div>
-                        </div>
-                    </div>
+        <div class="row text-center">
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-map-marker fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="100" data-speed="1500"></h2>
+                    <p class="count-text ">Number of species</p>
                 </div>
             </div>
-        </div>
-        <div class="row mt-5 justify-content-center">
-            <div class="col-md-8">
-
-                <div class="row">
-                    <div class="col-lg-3 text-center">
-                        <span class="text-teal h2 d-block">3423</span>
-                        <span>Happy Client</span>
-                    </div>
-                    <div class="col-lg-3 text-center">
-                        <span class="text-yellow h2 d-block">4398</span>
-                        <span>Members</span>
-                    </div>
-                    <div class="col-lg-3 text-center">
-                        <span class="text-success h2 d-block">50+</span>
-                        <span>Staffs</span>
-                    </div>
-                    <div class="col-lg-3 text-center">
-                        <span class="text-danger h2 d-block">2000+</span>
-                        <span>Our Followers</span>
-                    </div>
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-map-marker fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="1700" data-speed="1500"></h2>
+                    <p class="count-text ">Hectares of area</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-sort-numeric-asc fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="11900" data-speed="1500"></h2>
+                    <p class="count-text ">Total animals</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-map-marker fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="157" data-speed="1500"></h2>
+                    <p class="count-text ">Number of wildlife places</p>
                 </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="site-section py-5 bg-warning">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 d-flex">
-                <h2 class="text-white m-0">Bring Fun Life To Your Kids</h2>
-                <a href="#" class="btn btn-primary btn-custom-1 py-3 px-5 ml-auto">Get Started</a>
-            </div>
-        </div>
-    </div>
-</div>
+
+<script>
+
+    (function ($) {
+        $.fn.countTo = function (options) {
+            options = options || {};
+
+            return $(this).each(function () {
+                // set options for current element
+                var settings = $.extend({}, $.fn.countTo.defaults, {
+                    from: $(this).data('from'),
+                    to: $(this).data('to'),
+                    speed: $(this).data('speed'),
+                    refreshInterval: $(this).data('refresh-interval'),
+                    decimals: $(this).data('decimals')
+                }, options);
+
+                // how many times to update the value, and how much to increment the value on each update
+                var loops = Math.ceil(settings.speed / settings.refreshInterval),
+                    increment = (settings.to - settings.from) / loops;
+
+                // references & variables that will change with each update
+                var self = this,
+                    $self = $(this),
+                    loopCount = 0,
+                    value = settings.from,
+                    data = $self.data('countTo') || {};
+
+                $self.data('countTo', data);
+
+                // if an existing interval can be found, clear it first
+                if (data.interval) {
+                    clearInterval(data.interval);
+                }
+                data.interval = setInterval(updateTimer, settings.refreshInterval);
+
+                // initialize the element with the starting value
+                render(value);
+
+                function updateTimer() {
+                    value += increment;
+                    loopCount++;
+
+                    render(value);
+
+                    if (typeof (settings.onUpdate) == 'function') {
+                        settings.onUpdate.call(self, value);
+                    }
+
+                    if (loopCount >= loops) {
+                        // remove the interval
+                        $self.removeData('countTo');
+                        clearInterval(data.interval);
+                        value = settings.to;
+
+                        if (typeof (settings.onComplete) == 'function') {
+                            settings.onComplete.call(self, value);
+                        }
+                    }
+                }
+
+                function render(value) {
+                    var formattedValue = settings.formatter.call(self, value, settings);
+                    $self.html(formattedValue);
+                }
+            });
+        };
+
+        $.fn.countTo.defaults = {
+            from: 0,               // the number the element should start at
+            to: 0,                 // the number the element should end at
+            speed: 1000,           // how long it should take to count between the target numbers
+            refreshInterval: 100,  // how often the element should be updated
+            decimals: 0,           // the number of decimal places to show
+            formatter: formatter,  // handler for formatting the value before rendering
+            onUpdate: null,        // callback method for every time the element is updated
+            onComplete: null       // callback method for when the element finishes updating
+        };
+
+        function formatter(value, settings) {
+            return value.toFixed(settings.decimals);
+        }
+    }(jQuery));
+
+    jQuery(function ($) {
+        // custom formatting example
+        $('.count-number').data('countToOptions', {
+            formatter: function (value, options) {
+                return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+            }
+        });
+
+        // start all the timers
+        $('.timer').each(count);
+
+        function count(options) {
+            var $this = $(this);
+            options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+            $this.countTo(options);
+        }
+    });
+
+</script>

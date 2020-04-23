@@ -237,6 +237,12 @@
     <Content Include="Content\images\flaticon\svg\004-marketing.svg" />
     <Content Include="Content\images\flaticon\svg\005-deal.svg" />
     <Content Include="Content\images\flaticon\svg\006-research.svg" />
+    <Content Include="Content\images\flaticon\svg\australia.svg" />
+    <Content Include="Content\images\flaticon\svg\birds.svg" />
+    <Content Include="Content\images\flaticon\svg\camping-tent.svg" />
+    <Content Include="Content\images\flaticon\svg\forest.svg" />
+    <Content Include="Content\images\flaticon\svg\pawprint.svg" />
+    <Content Include="Content\images\flaticon\svg\search.svg" />
     <Content Include="Content\images\hero_1.jpg" />
     <Content Include="Content\images\hero_2.jpg" />
     <Content Include="Content\images\hero_3.jpg" />
