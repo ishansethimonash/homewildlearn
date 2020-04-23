@@ -256,6 +256,7 @@
     <Content Include="Content\images\img_6.jpg" />
     <Content Include="Content\images\kid_transparent.png" />
     <Content Include="Content\images\koalas.jpg" />
+    <Content Include="Content\images\mapaus.jpg" />
     <Content Include="Content\images\parents1.jpg" />
     <Content Include="Content\images\person_1.jpg" />
     <Content Include="Content\images\person_2.jpg" />
@@ -268,6 +269,7 @@
     <Content Include="Content\images\post_4.jpg" />
     <Content Include="Content\images\post_5.jpg" />
     <Content Include="Content\images\post_6.jpg" />
+    <Content Include="Content\images\quizimage.jpg" />
     <Content Include="Content\images\signature.svg" />
     <Content Include="Content\images\ui-icons_444444_256x240.png" />
     <Content Include="Content\images\ui-icons_555555_256x240.png" />
@@ -532,6 +534,7 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\quizTemplate1.js" />
     <Content Include="Scripts\slick.min.js" />
     <Content Include="Scripts\typed.js" />
     <Content Include="Web.config" />
