@@ -229,6 +229,7 @@
     <Content Include="Content\car.jpg" />
     <Content Include="Content\emu.jpg" />
     <Content Include="Content\exp.jpg" />
+    <Content Include="Content\images\greenback.jpg" />
     <Content Include="Content\images\curology-A9CUBfntOFQ-unsplash.jpg" />
     <Content Include="Content\images\flaticon\backup.txt" />
     <Content Include="Content\images\flaticon\svg\001-jigsaw.svg" />
