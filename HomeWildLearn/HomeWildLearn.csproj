@@ -230,6 +230,8 @@
     <Content Include="Content\emu.jpg" />
     <Content Include="Content\exp.jpg" />
     <Content Include="Content\images\boys.jpg" />
+    <Content Include="Content\images\fact1.png" />
+    <Content Include="Content\images\facts2.jpg" />
     <Content Include="Content\images\greenback.jpg" />
     <Content Include="Content\images\curology-A9CUBfntOFQ-unsplash.jpg" />
     <Content Include="Content\images\flaticon\backup.txt" />
