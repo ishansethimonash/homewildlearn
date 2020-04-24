@@ -1,4 +1,7 @@
-﻿
+﻿<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
 <div class="ftco-blocks-cover-1">
     <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('../Content/images/parents1.jpg')">
         <div class="container">
@@ -56,7 +59,7 @@
                 <p class="text-white">Our fun loving quiz module for the kid helps to check the current kowledge acquired from the contents, in this way the kid feels motivated if the result is good.</p>
             </div>
             <!-- /.row -->
-        </div>       
+        </div>
     </div>
 </div>
 
@@ -72,35 +75,35 @@
 </div>
 
 
-    <style>
+<style>
 
-        #map {
-            height: 60%;
-        }
+    #map {
+        height: 60%;
+    }
 
-        #title {
-            color: red;
-            background-color: yellow;
-            font-size: 25px;
-            font-weight: 500;
-            padding: 6px 12px;
-        }
+    #title {
+        color: red;
+        background-color: yellow;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+    }
 
-        input[type=text], select {
-            width: 60%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-    </style>
+    input[type=text], select {
+        width: 60%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+</style>
 
-    <input id="pac-input" type="text" placeholder="Search Place....">
-    <div id="map" style="padding-top:900px"></div>
+<input id="pac-input" type="text" placeholder="Search Place....">
+<div id="map" style="padding-top:900px"></div>
 
-    <script>
+<script>
     function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
             center: { lat: -38.958992, lng: 146.367476 },
@@ -201,6 +204,6 @@
         });
     }
 
-    </script>
+</script>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDw6UmJSbIyVdFGzZRvutTSBLsC8iBow8&libraries=places&callback=initAutocomplete"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDw6UmJSbIyVdFGzZRvutTSBLsC8iBow8&libraries=places&callback=initAutocomplete"></script>
