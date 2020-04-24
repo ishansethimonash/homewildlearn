@@ -1,39 +1,49 @@
 ﻿@model HomeWildLearn.Models.SendEmailViewModel
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">
-                About
-                <small>It's Nice to Meet You!</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li>
-                    @Html.ActionLink("Home", "Index", "Home")
-                </li>
-                <li class="active">About</li>
-            </ol>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-4">
-            <img src="~/Content/Wild-HomeLern.png" style="width:300px; height:300px;" class="img-responsive">
-        </div>
-        <div class="col-md-8">
-            <h2>Welcome to Wild-HomeLearn, a product by 'Wild-Soft'</h2>
-            <p>The Wild-HomeLearn, is a web application basically for kids but can be helpful to everyone. Our aim is to provide every knowledge from basic level to expert stage of wildlife to make interested users a wildlife expert. Similary, this application provides more of everything realted to wildlife, whether its a suggestion to hiking locations or it may be how to do camping. We hope you take an advantage of this platform and enjoy the experience.</p>
-        </div>
-    </div>
-    <!-- Team Member Profiles -->
-    <hr>
-    <div class="row">
-        <div class="col-lg-12">
-            <h2 class="page-header">
-                Contact Us...!
-                <small>We would like to hear it from you.</small>
-            </h2>
-        </div>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
+<div class="ftco-blocks-cover-1">
+    <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('../Content/images/hero_1.jpg')">
+        <div class="container">
+            <div class="row align-items-center ">
+                <div class="col-md-5 mt-5 pt-5">
+                    <span class="text-cursive h2 text-red">Welcome To Wild-HomeLearn</span>
+                    <p><a href="#" class="text-yellow">About Us </a></p>
+                    <p><a href="index.html" class="text-white">Home</a> <span class="mx-0">/</span> <strong>About</strong></p>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <img src="~/Content/Wild-HomeLern.png" alt="Image" class="img-fluid">
+            </div>
+            <div class="col-md-5 ml-auto pl-md-5">
+                <span class="text-cursive h2 text-red">About Us</span>
+                <h3 class="text-black">Uniting the joy of Wildlife</h3>
+                <p><span>The Wild-HomeLearn, is a web application basically for kids but can be helpful to everyone. Our aim is to provide every knowledge from basic level to expert stage of wildlife to make interested users a wildlife expert. Similary, this application provides more of everything realted to wildlife, whether its a suggestion to hiking locations or it may be how to do camping. We hope you take an advantage of this platform and enjoy the experience.</span></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="site-section bg-info">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <span class="text-cursive h1 text-red d-block">Reach us out..</span>
+            </div>
+        </div>
         @using (Html.BeginForm())
         {
             @Html.AntiForgeryToken()
@@ -73,126 +83,76 @@
 
                 <div class="form-group">
                     <div class="col-md-offset-2 col-md-10">
-                        <input type="submit" value="Send" class="btn btn-default" />
+                        <input type="submit" value="Send" class="btn btn-danger" />
                     </div>
                 </div>
             </div>
         }
-        <hr>
 
-        <div class="col-lg-12">
-            <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
-            <iframe width="100%" scrolling="no" height="400px" frameborder="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=-37.876759,145.045489&amp;spn=36.506174,146.013672&amp;t=m&amp;z=4&amp;output=embed" marginwidth="0" marginheight="0"></iframe>
-        </div>
-        <div class="row">
-            <div class="col-sm-8">
-               
-
-            </div>
-            <div class="col-sm-4">
-                <h3>Wild-Soft.</h3>
-             
-                <p>
-                    Monash University<br>
-                    Caulfield<br>
-                </p>
-                <p><i class="fa fa-clock-o"></i> <abbr title="Hours">H</abbr>: Monday - Friday: 9:00 AM to 5:00 PM</p>
-                <ul class="list-unstyled list-inline list-social-icons">
-                    <li class="tooltip-social linkedin-link"><a title="LinkedIn" data-placement="top" data-toggle="tooltip" href="#linkedin-company-page"><i class="fa fa-linkedin-square fa-2x"></i></a></li>
-                </ul>
-            </div>
-        </div><!-- /.row -->
-        @section Scripts {
-            @Scripts.Render("~/bundles/jqueryval")
-        }
     </div>
-    <hr>
+</div>
+
+
+
+<div class="site-section">
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
-                <h1 class="page-header">
-                    FAQ
-                    <small>Frequently Asked Questions</small>
-                </h1>
+                <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
+                <iframe width="100%" scrolling="no" height="400px" frameborder="0" src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=-37.876759,145.045489&amp;spn=36.506174,146.013672&amp;t=m&amp;z=4&amp;output=embed" marginwidth="0" marginheight="0"></iframe>
             </div>
         </div>
-        <div class="row">
-            <div class="col-lg-12">
-                <div id="accordion" class="panel-group">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a href="#collapseOne" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle collapsed">
-                                   To be filled
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="panel-collapse collapse" id="collapseOne" style="height: 0px;">
-                            <div class="panel-body">
-                                TO  befilled
-                            </div>
-                        </div>
+    </div>
+</div>
+
+
+<div class="site-section py-5 bg-warning">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <span class="text-cursive h1 text-white d-block">FAQ's</span>
+            </div>
+        </div>
+        <div id="accordion">
+            <div class="card">
+                <div class="card-header">
+                    <a class="card-link" data-toggle="collapse" href="#collapseOne">
+                        Collapsible Group Item #1
+                    </a>
+                </div>
+                <div id="collapseOne" class="collapse show" data-parent="#accordion">
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a href="#collapseTwo" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle collapsed">
-                                    TO  befilled
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="panel-collapse collapse" id="collapseTwo" style="height: 0px;">
-                            <div class="panel-body">
-                                TO  befilled
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseTwo">
+                        Collapsible Group Item #2
+                    </a>
+                </div>
+                <div id="collapseTwo" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a href="#collapseThree" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle collapsed">
-                                    TO  befilled
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="panel-collapse collapse" id="collapseThree">
-                            <div class="panel-body">
-                                TO  befilled
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a href="#collapseFour" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle collapsed">
-                                    TO  befilled
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="panel-collapse collapse" id="collapseFour">
-                            <div class="panel-body">
-                                TO  befilled
-                            </div>
-                        </div>
-                    </div>
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            <h4 class="panel-title">
-                                <a href="#collapseFive" data-parent="#accordion" data-toggle="collapse" class="accordion-toggle collapsed">
-                                    TO  befilled
-                                </a>
-                            </h4>
-                        </div>
-                        <div class="panel-collapse collapse" id="collapseFive">
-                            <div class="panel-body">
-                                TO  befilled
-                            </div>
-                        </div>
+                </div>
+            </div>
+            <div class="card">
+                <div class="card-header">
+                    <a class="collapsed card-link" data-toggle="collapse" href="#collapseThree">
+                        Collapsible Group Item #3
+                    </a>
+                </div>
+                <div id="collapseThree" class="collapse" data-parent="#accordion">
+                    <div class="card-body">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
 </div>
 
 

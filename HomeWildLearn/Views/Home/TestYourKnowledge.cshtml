@@ -2,30 +2,35 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">*@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
 
 <link href="~/css/quiz.css" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-<script src="~/Scripts/main.js"></script>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">
-                Lets Test Your Knowledge
-                <small>on wildlife</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li>
-                    @Html.ActionLink("Home", "Index", "Home")
-                </li>
-                <li class="active">Test Your Knowledge</li>
-            </ol>
+
+<div class="ftco-blocks-cover-1">
+    <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('../Content/images/quizimage.jpg')">
+        <div class="container">
+            <div class="row align-items-center ">
+                <div class="col-md-5 mt-5 pt-5">
+                    <span class="text-cursive h2 text-red">Welcome To Wild-HomeLearn</span>
+                    <p><a href="#" class="text-yellow">It's time to check knowledge </a></p>
+                    <p><a href="index.html" class="text-white">Home</a> <span class="mx-0">/</span> <strong>Check Your Knowledge</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section py-5 bg-warning">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 d-flex">
+                <h2 class="text-white m-0">Hey Kids  <small>- hope this quiz is not that easy for you ...</small></h2>
+            </div>
         </div>
     </div>
 </div>
@@ -34,28 +39,17 @@
 <div class="container">
     <div class="row">
         <div class="col-lg-12">
-
             <form id="quiz" name="quiz">
-
-
-                <p class="questions">What is the capital of Rhode Island?</p>
+                <p class="questions">What is the little Kangaroo called?</p>
                 <input id="textbox" type="text" name="question1">
-
-                <p class="questions">What is the capital of Connecticut?</p>
-                <input type="radio" id="mc" name="question2" value="Hartford"> Hartford<br>
-                <input type="radio" id="mc" name="question2" value="Heartford"> Heartford<br>
-
-                <p class="questions">What is the capital of New York?</p>
-
-                <input type="radio" id="mc" name="question3" value="Albany"> Albany<br>
-                <input type="radio" id="mc" name="question3" value="All Benny's"> All Benny's<br>
-
-
+                <p class="questions">Do Quokkas are always smiling?</p>
+                <input type="radio" id="mc" name="question2" value="Hartford"> True<br>
+                <input type="radio" id="mc" name="question2" value="Heartford"> False<br>
+                <p class="questions">Tasmanian devils are only found in Tasmania?</p>
+                <input type="radio" id="mc" name="question3" value="Albany"> True<br>
+                <input type="radio" id="mc" name="question3" value="All Benny's"> False<br>
                 <input id="button" type="button" value="I'm finished!" onclick="check();">
-
-
             </form>
-
             <div id="after_submit">
                 <p id="number_correct"></p>
                 <p id="message"></p>
@@ -64,3 +58,5 @@
         </div>
     </div>
 </div>
+
+<script src="~/Scripts/quizTemplate1.js"></script>

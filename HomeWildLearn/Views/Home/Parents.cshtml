@@ -1,121 +1,109 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+﻿<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">*@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">
-                Parents Section
-                <small>Learn more about what we teach</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li>
-                    @Html.ActionLink("Home", "Index", "Home")
-                </li>
-                <li class="active">Parents</li>
-            </ol>
-        </div>
-    </div>
-    <!-- /.row -->
-    <div class="row">
-        <div class="col-lg-12">
-            <img src="~/Content/par.jpg" class="img-responsive">
-        </div>
-    </div>
-    <!-- /.row -->
-    <!-- Service Paragraphs -->
-    <div class="row">
-        <div class="col-md-8">
-            <h2 class="page-header">What we are teaching?</h2>
-            <p>We have visual data analysis, interactive learning experiences, lively instructional videos, responsive search engines and a rich database of Australian wildlife to provide reliable and interesting learning experiences and camping advice.</p>
-
-        </div>
-        <div class="col-md-4">
-            <h2 class="page-header">Want to help the Wildlife?</h2>
-            <p>Click the button below to check who are the authorities related to wildlife welfare.</p>
-            <a href="https://www.wildlifevictoria.org.au/donate/donate-to-wildlife-victoria" class="btn btn-primary">Click here!!</a>
-        </div>
-    </div>
-
-
-    <div class="row">
-        <div class="col-lg-12">
-            <h2 class="page-header">Benefits to Parents</h2>
-        </div>
-        <div class="col-sm-4">
-            <img src="~/Content/learn.jpg" class="img-responsive">
-            <h3>Kids Learn.</h3>
-            <p>We focus on how to provide adequate knowledge which enables them to learn more.</p>
-        </div>
-        <div class="col-sm-4">
-            <img src="~/Content/exp.jpg" class="img-responsive">
-            <h3>Experience child.</h3>
-            <p>The contents and modules of our product makes your child experienced in learning and moreover the they attain knowledge about wildlife.</p>
-        </div>
-        <div class="col-sm-4">
-            <img src="~/Content/qui.jpg" class="img-responsive">
-            <h3>Quiz the kid.</h3>
-            <p>Our fun loving quiz module for the kid helps to check the current kowledge acquired from the contents, in this way the kid feels motivated if the result is good.</p>
-        </div>
-        <!-- /.row -->
-    </div>
-
-    <div class="section-colored text-center">
-
+<div class="ftco-blocks-cover-1">
+    <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('../Content/images/parents1.jpg')">
         <div class="container">
+            <div class="row align-items-center ">
+                <div class="col-md-5 mt-5 pt-5">
+                    <span class="text-cursive h2 text-red">Welcome To Wild-HomeLearn</span>
+                    <p><a href="#" class="text-yellow">Parents </a></p>
+                    <p><a href="index.html" class="text-white">Home</a> <span class="mx-0">/</span> <strong>Parents</strong></p>
 
-            <div class="row">
-                <div class="col-lg-12">
-                    <h1>Looking for hikes or camping areas?<small>View the map</small></h1>
-                    <hr>
                 </div>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-8">
+                <h2 class="text-black">Uniting the joy of Wildlife</h2>
+                <p>We have visual data analysis, interactive learning experiences, lively instructional videos, responsive search engines and a rich database of Australian wildlife to provide reliable and interesting learning experiences and camping advice.</p>
+
+            </div>
+            <div class="col-md-4">
+                <h2 class="page-header">Want to help the Wildlife?</h2>
+                <p>Click the button below to check who are the authorities related to wildlife welfare.</p>
+                <a href="https://www.wildlifevictoria.org.au/donate/donate-to-wildlife-victoria" class="btn btn-primary">Click here!!</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="site-section bg-info">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="text-white" style="text-align:center">Uniting the joy of Wildlife</h1>
+            </div>
+            <div class="col-sm-4">
+                <img src="~/Content/learn.jpg" class="img-fluid">
+                <h3 class="text-white">Kids Learn.</h3>
+                <p class="text-white">We focus on how to provide adequate knowledge which enables them to learn more.</p>
+            </div>
+            <div class="col-sm-4">
+                <img src="~/Content/exp.jpg" class="img-fluid">
+                <h3 class="text-white">Experience child.</h3>
+                <p class="text-white">The contents and modules of our product makes your child experienced in learning and moreover the they attain knowledge about wildlife.</p>
+            </div>
+            <div class="col-sm-4">
+                <img src="~/Content/qui.jpg" class="img-fluid">
+                <h3 class="text-white">Quiz the kid.</h3>
+                <p class="text-white">Our fun loving quiz module for the kid helps to check the current kowledge acquired from the contents, in this way the kid feels motivated if the result is good.</p>
             </div>
             <!-- /.row -->
-
         </div>
-        <!-- /.container -->
-
     </div>
+</div>
 
 
-    <style>
+<div class="site-section py-5 bg-warning">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 d-flex">
+                <h2 class="text-white m-0">Looking for hikes or camping areas?<small>- View the map</small></h2>
+            </div>
+        </div>
+    </div>
+</div>
 
-        #map {
-            height: 60%;
-        }
 
-        #title {
-            color: red;
-            background-color: yellow;
-            font-size: 25px;
-            font-weight: 500;
-            padding: 6px 12px;
-        }
+<style>
 
-        input[type=text], select {
-            width: 60%;
-            padding: 12px 20px;
-            margin: 8px 0;
-            display: inline-block;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
-    </style>
+    #map {
+        height: 60%;
+    }
 
-    <input id="pac-input" type="text" placeholder="Search Place....">
-    <div id="map" style="padding-top:900px"></div>
+    #title {
+        color: red;
+        background-color: yellow;
+        font-size: 25px;
+        font-weight: 500;
+        padding: 6px 12px;
+    }
 
-    <script>
+    input[type=text], select {
+        width: 60%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+</style>
+
+<input id="pac-input" type="text" placeholder="Search Place....">
+<div id="map" style="padding-top:900px"></div>
+
+<script>
     function initAutocomplete() {
         var map = new google.maps.Map(document.getElementById('map'), {
             center: { lat: -38.958992, lng: 146.367476 },
@@ -216,6 +204,6 @@
         });
     }
 
-    </script>
+</script>
 
-    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDw6UmJSbIyVdFGzZRvutTSBLsC8iBow8&libraries=places&callback=initAutocomplete"></script>
+<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBDw6UmJSbIyVdFGzZRvutTSBLsC8iBow8&libraries=places&callback=initAutocomplete"></script>

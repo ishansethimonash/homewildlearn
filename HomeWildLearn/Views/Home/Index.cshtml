@@ -1,317 +1,300 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
+﻿
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
+<!------ Include the above in your HEAD tag ---------->
 
-
-@*<style>
-    * {
-        box-sizing: border-box;
-    }
-
-    body {
-        font: 16px Arial;
-    }
-
-    /*the container must be positioned relative:*/
-    .autocomplete {
-        position: relative;
-        display: inline-block;
-    }
-
-    input {
-        border: 1px solid transparent;
-        background-color: #f1f1f1;
-        padding: 10px;
-        font-size: 16px;
-    }
-
-        input[type=text] {
-            background-color: #f1f1f1;
-            width: 100%;
-        }
-
-        input[type=submit] {
-            background-color: DodgerBlue;
-            color: #fff;
-            cursor: pointer;
-        }
-
-    .autocomplete-items {
-        position: absolute;
-        border: 1px solid #d4d4d4;
-        border-bottom: none;
-        border-top: none;
-        z-index: 99;
-        /*position the autocomplete items to be the same width as the container:*/
-        top: 100%;
-        left: 0;
-        right: 0;
-    }
-
-        .autocomplete-items div {
-            padding: 10px;
-            cursor: pointer;
-            background-color: #fff;
-            border-bottom: 1px solid #d4d4d4;
-        }
-
-            /*when hovering an item:*/
-            .autocomplete-items div:hover {
-                background-color: #e9e9e9;
-            }
-
-    /*when navigating through the items using the arrow keys:*/
-    .autocomplete-active {
-        background-color: DodgerBlue !important;
-        color: #ffffff;
-    }
-</style>*@
-
-@*@Scripts.Render("~/bundles/jqueryui")
-
-<script src="https://code.jquery.com/jquery-migrate-3.0.0.min.js"></script>
-
-<link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">*@
-
-
-
-
-
+<link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 <style>
-    #containers .btn {
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        -ms-transform: translate(-50%, -50%);
-        background-color: #555;
-        color: white;
-        font-size: 16px;
-        padding: 12px 24px;
-        border: none;
-        cursor: pointer;
+    .counter {
+        background-color: #f5f5f5;
+        padding: 20px 0;
         border-radius: 5px;
+    }
+
+    .count-title {
+        font-size: 40px;
+        font-weight: normal;
+        margin-top: 10px;
+        margin-bottom: 0;
         text-align: center;
     }
 
-    .containers .btn:hover {
-        background-color: black;
+    .count-text {
+        font-size: 13px;
+        font-weight: normal;
+        margin-top: 10px;
+        margin-bottom: 0;
+        text-align: center;
+    }
+
+    .fa-2x {
+        margin: 0 auto;
+        float: none;
+        display: table;
+        color: #4ad1e5;
     }
 </style>
 
-
-
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">*@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-
-
-<div>
-    <div class="section" style="padding:0px">
-        <div id="myCarousel" class="carousel slide" data-ride="carousel">
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-                <li data-target="#myCarousel" data-slide-to="1"></li>
-                <li data-target="#myCarousel" data-slide-to="2"></li>
-            </ol>
-
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner">
-
-                <div class="item active">
-                    <img src="~/Content/rainforest-during-foggy-day-975771 (1).jpg" alt="Rainforest" style="width:100%;">
-                    <div class="carousel-caption">
-                        <h3>Scenic Greenery</h3>
-                        <p>Victoria Rainforest</p>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="~/Content/pic1.jpg" alt="wilsons prom" style="width:100%;">
-                    <div class="carousel-caption">
-                        <h3>Mother Nature</h3>
-                        <p>Wilsons Prom National Park</p>
-                    </div>
-                </div>
-
-                <div class="item">
-                    <img src="~/Content/pic2.jpg" alt="New York" style="width:100%;">
-                    <div class="carousel-caption">
-                        <h3>Let's Camp</h3>
-                        <p>Kid Camp Site</p>
-                    </div>
-                </div>
-
-            </div>
-
-            <!-- Left and right controls -->
-            <a class="left carousel-control" href="#myCarousel" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#myCarousel" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-</div>
-<hr>
-
-
-<div class="container" id="containers" align="center">
-    <div class="row">
-        <h1></h1>
-        <div class="col-md-6" align="left">
-            <a href="@Url.Action("Kids")">
-                <img class="img-responsive" src="~/Content/kid.jpg">
-                <button class="btn">Kids - Click here !!"</button>
-            </a>
-        </div>
-        <h1></h1>
-        <div class="col-md-6" align="right">
-            <a href="@Url.Action("Parents")">
-                <img class="img-responsive" src="~/Content/parent.jpg">
-                <button class="btn">Parents - Click here !!"</button>
-            </a>
-        </div>
-
-    </div>
-    <hr>
-    <!-- /.row -->
-</div>
-
-
-
-@*<div class=" text-center">
-    <div class="container">
-        <div class="col-lg-12">
-          
-            @using (Html.BeginForm("Details", "Animals", FormMethod.Post))
-            {
-                <div class="autocomplete" style="width:300px;">
-                    <input id="animalSearch" type="text" name="animalName" placeholder="ex. Koala..">
-                </div>
-                <input type="submit">
-                <br /><br />
-                @ViewBag.Message
-            }
-        </div>
-    </div>
-</div>*@
-
-@*<script>
-    $(document).ready(function () {
-            $('#animalSearch').autocomplete({
-                source: '@Url.Action("Search", "Animals")'
-            });
-        });
-</script>*@
-
-
-
-<!-- /.container -->
-<div class=" text-center">
+<div class="ftco-blocks-cover-1">
+    <!-- data-stellar-background-ratio="0.5" style="background-image: url('images/hero_1.jpg')" -->
+    <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('../Content/images/boys.jpg')">
         <div class="container">
-            <div class="col-lg-12" align="center">
-                <h3>Search...<small>for Wild-Animals</small></h3>
-                <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search..">
-                    <span class="input-group-btn">
-                        <button type="button" class="btn btn-primary">
-                            <i class="fa fa-search"></i>
-                        </button>
-                    </span>
+            <div class="row align-items-center ">
+                <div class="col-md-5 mt-5 pt-5">
+                    <span class="text-cursive h2 text-red">Welcome To Wild-HomeLearn</span>
+                    <p><a href="#" class="text-yellow">Home </a></p>
                 </div>
-                <hr>
+
             </div>
         </div>
     </div>
-
-<div class="section" style="padding:0px;">
-
+</div>
+<div class="site-section">
     <div class="container">
-
         <div class="row">
-            <div class="col-lg-12 text-center">
-                <h2>Glimpse of Wild-HomeLearn</h2>
-                <hr>
+            <div class="col-lg-6">
+                <div class="block-2 red">
+                    <span class="wrap-icon">
+                        <span class="icon-child"></span>
+                    </span>
+                    <h2>Wild Kids</h2>
+                    <p>By analyzing children's preferences and learning characteristics, we designed interactive teaching models that are attractive to children. Children's attention is captured by video to study and learn about Australian wildlife, and the learning results are detected by interactive game mode to ensure the quality of children's learning.</p>
+                </div>
             </div>
-
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <a href="#">
-                    <img class="img-responsive img-home-portfolio" src="~/Content/question.jpg">
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <a href="#">
-                    <img class="img-responsive img-home-portfolio" src="~/Content/quiz.jpg">
-                </a>
-            </div>
-            <div class="col-lg-4 col-md-4 col-sm-6">
-                <a href="#">
-                    <img class="img-responsive img-home-portfolio" src="~/Content/mapim.jpg">
-                </a>
+            <div class="col-lg-6">
+                <div class="block-2 yellow">
+                    <span class="wrap-icon">
+                        <span class="icon-paw"></span>
+                    </span>
+                    <h2>Wild Learn</h2>
+                    <p>Wild HomeLearn is a non-profit online learning platform focusing on Australian ecosystems. We are committed to helping people learn about Australia's wildlife through our free policy. We focus on helping children living in Australia learn about their native wild animals and camping. Therefore we ensure the best qualit of knowledge to you.</p>
+                </div>
             </div>
 
         </div>
+    </div>
+</div>
+<div class="site-section py-5 bg-warning">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 d-flex">
+                <h2 class="text-white m-0">Hey Kids  <small>- Do you secretly want to  check your knowledge about wildlife?</small></h2>
+                <p><a href="@Url.Action("TestYourKnowledge")" class="btn btn-primary btn-custom-1 mt-4">Do it..</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="site-section bg-info">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <h1 class="text-white">Things you're looking for are here...</h1>
+            </div>
+        </div>
         <div class="row">
-            <div class="col-lg-4 col-md-4">
-                <h3><i class="fa fa-question"></i> Why Wild-HomeLearn?</h3>
-                <p>Wild HomeLearn is a non-profit online learning platform focusing on Australian ecosystems. We are committed to helping people learn about Australia's wildlife through our free policy. We focus on helping children living in Australia learn about their native wild animals and camping.</p>
+            <div class="col-lg-4">
+                <div class="package text-center bg-white">
+                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/pawprint.svg" alt="Image" class="img-fluid"></span>
+                    <h3 class="text-teal">Animals Around Me !</h3>
+                    <p> Lets's check which animals are around me.  </p>
+                    <p><a href="@Url.Action("AnimalsAroundMe")" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                </div>
             </div>
-            <div class="col-lg-4 col-md-4">
-                <h3><i class="fa fa-pencil"></i> Our Solution..is Belief</h3>
-                <p>By analyzing children's preferences and learning characteristics, we designed interactive teaching models that are attractive to children. Children's attention is captured by video to study and learn about Australian wildlife, and the learning results are detected by interactive game mode to ensure the quality of children's learning.</p>
+
+            <div class="col-lg-4">
+                <div class="package text-center bg-white">
+                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/australia.svg" alt="Image" class="img-fluid"></span>
+                    <h3 class="text-teal">Expolore Wild-Animals</h3>
+                    <p>Let's explore more about wild animals. Search on!</p>
+                    <p><a href="@Url.Action("Index", "Animals" )" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                </div>
             </div>
-            <div class="col-lg-4 col-md-4">
-                <h3><i class="fa fa-folder-open"></i>Our Contents</h3>
-                <p>We have visual data analysis, interactive learning experiences, lively instructional videos, responsive search engines and a rich database of Australian wildlife to provide reliable and interesting learning experiences and camping advice.</p>
+
+            <div class="col-lg-4">
+                <div class="package text-center bg-white">
+                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/birds.svg" alt="Image" class="img-fluid"></span>
+                    <h3 class="text-teal">How animals Migrate?</h3>
+                    <p>Wondering how animals migrate? Lets find out!!</p>
+                    <p><a href="#" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                </div>
             </div>
         </div>
         <hr>
-    </div>
-</div>
-
-<div class="section-colored text-center" style=" background-color: #772953;">
-    <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <h1 style="color:white;">Our motto...<small>-By "Wild-Soft."</small></h1>
-                <p style="color:white;">"A virtual bridge between you and nature"</p>
-                <hr>
+            <div class="col-lg-4">
+                <div class="package text-center bg-white">
+                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/search.svg" alt="Image" class="img-fluid"></span>
+                    <h3 class="text-teal">Interesting Facts</h3>
+                    <p> Learn some cool and interesting facts about wildlife.</p>
+                    <p><a href="@Url.Action("InterestingFacts")" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="package text-center bg-white">
+                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/forest.svg" alt="Image" class="img-fluid"></span>
+                    <h3 class="text-teal">Where to go Zoo, Forest or Park</h3>
+                    <p>Confused? Can't decide where to go for wild animal lookout?</p>
+                    <p><a href="@Url.Action("WhereTo")" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                </div>
+            </div>
+
+            <div class="col-lg-4">
+                <div class="package text-center bg-white">
+                    <span class="img-wrap"><img src="~/Content/images/flaticon/svg/camping-tent.svg" alt="Image" class="img-fluid"></span>
+                    <h3 class="text-teal">Want to learn "CAMPING?"</h3>
+                    <p>Do you want to experience and learn camping?</p>
+                    <p><a href="@Url.Action("LearnCamping")" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                </div>
             </div>
         </div>
     </div>
 </div>
 
-<div class="section">
+<div class="site-section bg-light">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <video width="550" height="350" src="~/Content/jungle.mp4" class="img-responsive" controls="controls">
-                    Your browser does not support the video tag
-                </video>
-            </div>
-            <div class="col-lg-6 col-md-6 col-sm-6">
-                <h2>Wild-HomeLearn includes - </h2>
-                <ul>
-                    <li>A walk-through to the Wildlife.</li>
-                    <li>Information on wildlife from reliable sources.</li>
-                    <li>How animals migrate?</li>
-                    <li>Check your knowledge fun loving games.</li>
-                    <li>Breakthrough facts.</li>
-                </ul>
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <span class="text-cursive h5 text-red d-block">Lets look how many animals actually are their in Australia..</span>
+                <h2 class="text-black">What numbers says? Lets find out..</h2>
             </div>
         </div>
-        <!-- /.row -->
 
+        <div class="row text-center">
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-map-marker fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="100" data-speed="1500"></h2>
+                    <p class="count-text ">Number of species</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-map-marker fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="1700" data-speed="1500"></h2>
+                    <p class="count-text ">Hectares of area</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-sort-numeric-asc fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="11900" data-speed="1500"></h2>
+                    <p class="count-text ">Total animals</p>
+                </div>
+            </div>
+            <div class="col">
+                <div class="counter">
+                    <i class="fa fa-map-marker fa-2x"></i>
+                    <h2 class="timer count-title count-number" data-to="157" data-speed="1500"></h2>
+                    <p class="count-text ">Number of wildlife places</p>
+                </div>
+            </div>
+        </div>
     </div>
-    <!-- /.container -->
-
 </div>
-<!-- /.section -->
+
+
+<script>
+
+    (function ($) {
+        $.fn.countTo = function (options) {
+            options = options || {};
+
+            return $(this).each(function () {
+                // set options for current element
+                var settings = $.extend({}, $.fn.countTo.defaults, {
+                    from: $(this).data('from'),
+                    to: $(this).data('to'),
+                    speed: $(this).data('speed'),
+                    refreshInterval: $(this).data('refresh-interval'),
+                    decimals: $(this).data('decimals')
+                }, options);
+
+                // how many times to update the value, and how much to increment the value on each update
+                var loops = Math.ceil(settings.speed / settings.refreshInterval),
+                    increment = (settings.to - settings.from) / loops;
+
+                // references & variables that will change with each update
+                var self = this,
+                    $self = $(this),
+                    loopCount = 0,
+                    value = settings.from,
+                    data = $self.data('countTo') || {};
+
+                $self.data('countTo', data);
+
+                // if an existing interval can be found, clear it first
+                if (data.interval) {
+                    clearInterval(data.interval);
+                }
+                data.interval = setInterval(updateTimer, settings.refreshInterval);
+
+                // initialize the element with the starting value
+                render(value);
+
+                function updateTimer() {
+                    value += increment;
+                    loopCount++;
+
+                    render(value);
+
+                    if (typeof (settings.onUpdate) == 'function') {
+                        settings.onUpdate.call(self, value);
+                    }
+
+                    if (loopCount >= loops) {
+                        // remove the interval
+                        $self.removeData('countTo');
+                        clearInterval(data.interval);
+                        value = settings.to;
+
+                        if (typeof (settings.onComplete) == 'function') {
+                            settings.onComplete.call(self, value);
+                        }
+                    }
+                }
+
+                function render(value) {
+                    var formattedValue = settings.formatter.call(self, value, settings);
+                    $self.html(formattedValue);
+                }
+            });
+        };
+
+        $.fn.countTo.defaults = {
+            from: 0,               // the number the element should start at
+            to: 0,                 // the number the element should end at
+            speed: 1000,           // how long it should take to count between the target numbers
+            refreshInterval: 100,  // how often the element should be updated
+            decimals: 0,           // the number of decimal places to show
+            formatter: formatter,  // handler for formatting the value before rendering
+            onUpdate: null,        // callback method for every time the element is updated
+            onComplete: null       // callback method for when the element finishes updating
+        };
+
+        function formatter(value, settings) {
+            return value.toFixed(settings.decimals);
+        }
+    }(jQuery));
+
+    jQuery(function ($) {
+        // custom formatting example
+        $('.count-number').data('countToOptions', {
+            formatter: function (value, options) {
+                return value.toFixed(options.decimals).replace(/\B(?=(?:\d{3})+(?!\d))/g, ',');
+            }
+        });
+
+        // start all the timers
+        $('.timer').each(count);
+
+        function count(options) {
+            var $this = $(this);
+            options = $.extend({}, options || {}, $this.data('countToOptions') || {});
+            $this.countTo(options);
+        }
+    });
+
+</script>

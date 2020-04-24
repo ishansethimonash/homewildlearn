@@ -1,109 +1,94 @@
-﻿@{
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-@*<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">*@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+﻿
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">
-                Happenings
-                <small>around Australia.</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li>
-                    @Html.ActionLink("Home", "Index", "Home")
-                </li>
-                <li class="active">What's New</li>
-            </ol>
+<div class="ftco-blocks-cover-1">
+    <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('../Content/images/koalas.jpg')">
+        <div class="container">
+            <div class="row align-items-center ">
+                <div class="col-md-5 mt-5 pt-5">
+                    <span class="text-cursive h2 text-red">Welcome To Wild-HomeLearn</span>
+                    <p><a href="#" class="text-yellow">What's New? </a></p>
+                    <p><a href="index.html" class="text-white">Home</a> <span class="mx-0">/</span> <strong>What's New? </strong></p>
+
+                </div>
+
+            </div>
         </div>
     </div>
 </div>
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
+<div class="site-section">
+    <div class="container">
+        <div class="row">
             <h1 class="page-header">
                 Latest News.
             </h1>
             <iframe width="100%" scrolling="no" height="400px" frameborder="0" src="https://www.google.org/crisismap/weather_and_events?hl=en&llbox=-16.64%2C-40.49%2C163.43%2C103.4&t=TERRAIN&layers=30%2C1%2C31%2C32%2C12%2C20%2C14%2C24%2C10%2C13%2C1340721268837&embedded=true" marginwidth="0" marginheight="0"></iframe>
-            <hr>
         </div>
-
     </div>
 </div>
 
 
-<div class="container">
-    <div class="row">
-        <div class="col-lg-12">
-            <h1 class="page-header">
-                Wild Blogs
-                <small>written by our wonderful wild kids</small>
-            </h1>
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">
+                    Wild Blogs
+                    <small>written by our wonderful wild kids</small>
+                    <hr>
+                </h1>
+            </div>
         </div>
-    </div>
-    <div class="row">
-        <div class="col-md-1">
-            <p>
-                <i class="fa fa-camera fa-4x"></i>
-            </p>
-            <p>Apr 24, 2020</p>
-        </div>
-        <div class="col-md-5">
-            <a href="#">
-                <img class="img-responsive" src="~/Content/landscape.jpg">
-            </a>
-        </div>
-        <div class="col-md-6">
-            <h3>
-                <a href="#">A wild experience</a>
-            </h3>
-            <p>
-                by <a href="#">Emily</a>
-            </p>
-            <p>Woah...the experience that I had via wildHomeLearn was exceptional. However, I know nothing can match the real wild experience but somehow getting stucked at home beacuse of bushfires, I couldn't imagine how helpful was this experience - Suggestion to other do check the explore wild life page.</p>
+        <div class="row">
+            <div class="col-md-1">
+                <p>
+                    <i class="fa fa-camera fa-4x"></i>
+                </p>
+                <p>Apr 24, 2020</p>
+            </div>
+            <div class="col-md-5">
+                <a href="#">
+                    <img class="img-fluid" src="~/Content/landscape.jpg">
+                </a>
+            </div>
+            <div class="col-md-6">
+                <h3>
+                    <a href="#">A wild experience</a>
+                </h3>
+                <p>
+                    by <a href="#">Emily</a>
+                </p>
+                <p>Woah...the experience that I had via wildHomeLearn was exceptional. However, I know nothing can match the real wild experience but somehow getting stucked at home beacuse of bushfires, I couldn't imagine how helpful was this experience - Suggestion to other do check the explore wild life page.</p>
 
+            </div>
         </div>
-    </div>
-    <hr>
-    <div class="row">
-        <div class="col-md-1">
-            <p>
-                <i class="fa fa-camera fa-4x"></i>
-            </p>
-            <p>Apr 25, 2020</p>
-        </div>
-        <div class="col-md-5">
-            <a href="#)">
-                <img class="img-responsive" src="~/Content/ost.jpg">
-            </a>
-        </div>
-        <div class="col-md-6">
-            <h3>
-                <a href="#">Emu or Ostrich?</a>
-            </h3>
-            <p>
-                by <a href="#">Yin</a>
-            </p>
-            <p>I was really confused between an ostrich and emu...while exploring the readings from this website, I was able to distinguish between emu and an ostrich- Emu is native to Australia and second largest bird whereas ostrich is native to Africa and the largest bird in the world.</p>
+        <hr>
+        <div class="row">
+            <div class="col-md-1">
+                <p>
+                    <i class="fa fa-camera fa-4x"></i>
+                </p>
+                <p>Apr 25, 2020</p>
+            </div>
+            <div class="col-md-5">
+                <a href="#)">
+                    <img class="img-fluid" src="~/Content/ost.jpg">
+                </a>
+            </div>
+            <div class="col-md-6">
+                <h3>
+                    <a href="#">Emu or Ostrich?</a>
+                </h3>
+                <p>
+                    by <a href="#">Yin</a>
+                </p>
+                <p>I was really confused between an ostrich and emu...while exploring the readings from this website, I was able to distinguish between emu and an ostrich- Emu is native to Australia and second largest bird whereas ostrich is native to Africa and the largest bird in the world.</p>
 
+            </div>
         </div>
-    </div>
-    <hr>
-    <div class="row">
-        <ul class="pager">
-            <li class="previous">
-                <a href="#">← Older</a>
-            </li>
-            <li class="next">
-                <a href="#">Newer →</a>
-            </li>
-        </ul>
+        <hr>
     </div>
 </div>
-
