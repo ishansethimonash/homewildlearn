@@ -2,14 +2,24 @@
 
 const TOKEN = "pk.eyJ1Ijoic2hhaHJvb3FwYXRoYW4iLCJhIjoiY2sweHQ2cGI2MDkzMDNibzN1aDd2b3NxZCJ9.mkmi_lQe7LYTmNSsV8V8bw";
 var locations = [];
+var selectedAnimal = "All";
+console.log(selectedAnimal);
+
+var currentMarkers = [];
 // The first step is obtain all the latitude and longitude from the HTML
 // The below is a simple jQuery selector
+
+$('#animalFilter li a').on('click', function () {
+    selectedAnimal = $(this).html();
+    refreshMap();
+});
+
+
 $(".coordinates").each(function () {
- 
+
     var longitude = $(".longitude", this).text().trim();
     var latitude = $(".latitude", this).text().trim();
     var description = $(".description", this).text().trim();
-
     // Create a point data structure to hold the values.
     var point = {
         "latitude": latitude,
@@ -40,12 +50,14 @@ for (i = 0; i < locations.length; i++) {
 */
 
 mapboxgl.accessToken = TOKEN;
+
 var map = new mapboxgl.Map({
     container: 'map',
-    style: 'mapbox://styles/mapbox/streets-v10',
+    style: 'mapbox://styles/mapbox/streets-v10?optimize=true',
     zoom: 11,
     center: [locations[0].longitude, locations[0].latitude]
 });
+
 map.on('load', function () {
     /* console.log(data);
     // Add a layer showing the places.
@@ -77,7 +89,90 @@ map.on('load', function () {
         trackUserLocation: true
     }));
 
-    /* 
+
+    for (i = 0; i < locations.length; i++) {
+        if (selectedAnimal == "All" || locations[i].description == selectedAnimal) {
+            var animalLocation = [locations[i].longitude, locations[i].latitude];
+
+            // create the popup
+            var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+                '' + locations[i].description
+            );
+
+
+            // create DOM element for the marker
+            var el = document.createElement('div');
+            el.id = 'marker';
+
+
+            // create the marker
+            var marker = new mapboxgl.Marker(el)
+                .setLngLat(animalLocation)
+                .setPopup(popup) // sets a popup on this marker
+                .addTo(map);
+
+            currentMarkers.push(marker);
+        }
+
+        
+    }
+
+
+
+});
+
+function clearMarkers() {
+    console.log(currentMarkers.length)
+    currentMarkers.forEach((marker) => marker.remove());
+    currentMarkers = [];
+}
+
+
+function refreshMap() {
+
+    clearMarkers();
+
+    map.addControl(new MapboxGeocoder({
+        accessToken: mapboxgl.accessToken
+    }));;
+    map.addControl(new mapboxgl.NavigationControl());
+
+    // Add geolocate control to the map.
+    map.addControl(new mapboxgl.GeolocateControl({
+        positionOptions: {
+            enableHighAccuracy: true
+        },
+        trackUserLocation: true
+    }));
+
+
+    for (i = 0; i < locations.length; i++) {
+        if (selectedAnimal == "All" || locations[i].description == selectedAnimal) {
+            var animalLocation = [locations[i].longitude, locations[i].latitude];
+
+            // create the popup
+            var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+                '' + locations[i].description
+            );
+
+
+            // create DOM element for the marker
+            var el = document.createElement('div');
+            el.id = 'marker';
+
+            // create the marker
+            var marker = new mapboxgl.Marker(el)
+                .setLngLat(animalLocation)
+                .setPopup(popup) // sets a popup on this marker
+                .addTo(map);
+
+            currentMarkers.push(marker);
+        }
+    }
+
+}
+
+/*
     // When a click event occurs on a feature in the places layer, open a popup at the
     // location of the feature, with description HTML from its properties.
     map.on('click', 'places', function (e) {
@@ -94,7 +189,7 @@ map.on('load', function () {
             .setHTML(description)
             .addTo(map);
     });
-    
+
     // Change the cursor to a pointer when the mouse is over the places layer.
     map.on('mouseenter', 'places', function () {
         map.getCanvas().style.cursor = 'pointer';
@@ -159,50 +254,3 @@ map.on('load', function () {
         inputs[i].onclick = switchLayer;
     }
     */
-    for (i = 0; i < locations.length; i++) {
-        var animalLocation = [locations[i].longitude, locations[i].latitude];
-
-        // create the popup
-        var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-            'CUTEST <b>KOALA</b> EVER'
-        );
-
-
-        // create DOM element for the marker
-        var el = document.createElement('div');
-        el.id = 'marker';
-
-
-        // create the marker
-        new mapboxgl.Marker(el)
-            .setLngLat(animalLocation)
-            .setPopup(popup) // sets a popup on this marker
-            .addTo(map);
-    }
-
-
-});
-
-function reloadMap() {
-    map.addLayer({
-        "id": "places",
-        "type": "symbol",
-        "source": {
-            "type": "geojson",
-            "data": {
-                "type": "FeatureCollection",
-                "features": data
-            }
-        },
-        "layout": {
-            "icon-image": "{icon}",
-            "icon-allow-overlap": true
-        }
-    });
-
-    map.addControl(new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken
-    }));;
-    map.addControl(new mapboxgl.NavigationControl());
-
-}
