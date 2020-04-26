@@ -1,11 +1,7 @@
-﻿@model IEnumerable<HomeWildLearn.Models.wildlife_locations>
+﻿﻿@model IEnumerable<HomeWildLearn.Models.wildlife_locations>
 
 @{
     ViewBag.Title = "Index";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
-
-@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
@@ -21,6 +17,7 @@
 
 
 <style>
+
     #marker {
         background-image: url('https://img.freepik.com/free-vector/cute-koala-face-icon-gray-background_24911-2553.jpg');
         background-size: cover;
@@ -45,7 +42,6 @@
         box-shadow: 0px 2px 4px 2px rgba(0,0,0,.1);
         border: 1px solid #929292;
     }
-
     /* Hide the old tip */
     .mapboxgl-popup-tip {
         display: none;
@@ -95,30 +91,36 @@
     </div>
 </div>
 
-<div class="site-section">
-    <div class="dropdown">
-        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
-            Select Animal
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" id="animalFilter">
-            <!-- populating the dropdown with distinct animal name values-->
-            @foreach (var item in Model.GroupBy(x => x.Animal.animal_name).Select(x => x.First()))
-            {
+<div class="site-section py-5 bg-success" id="sec3">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 d-flex">
+                <h1 class="text-white m-0">Lets Select animals from this button</h1><br>
+                <hr>
+                <div class="dropdown">
+                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
+                        Lets Select Animal..
+                    </button>
+                    <div class="dropdown-menu" id="animalFilter">
+                        @foreach (var item in Model.GroupBy(x => x.Animal.animal_name).Select(x => x.First()))
+                        {
 
-                <li><a value="@Html.DisplayName(item.Animal_id.ToString())">@Html.DisplayName(item.Animal.animal_name)</a></li>
-            }
+                            <a class="dropdown-item" href="#sec3" value="@Html.DisplayName(item.Animal_id.ToString())">@Html.DisplayName(item.Animal.animal_name)</a>
+                        }
 
-            <li><a href="#">1</a></li>
-        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
+
 
 <div id="map" style="height:300px"></div>
 
 <table>
     @foreach (var item in Model)
-    {    
+    {
         {
             <tr class="coordinates">
                 <td class="description" hidden>

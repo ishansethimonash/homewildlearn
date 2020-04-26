@@ -9,7 +9,7 @@ var currentMarkers = [];
 // The first step is obtain all the latitude and longitude from the HTML
 // The below is a simple jQuery selector
 
-$('#animalFilter li a').on('click', function () {
+$('#animalFilter a').on('click', function () {
     selectedAnimal = $(this).html();
     refreshMap();
 });
@@ -131,20 +131,6 @@ function clearMarkers() {
 function refreshMap() {
 
     clearMarkers();
-
-    map.addControl(new MapboxGeocoder({
-        accessToken: mapboxgl.accessToken
-    }));;
-    map.addControl(new mapboxgl.NavigationControl());
-
-    // Add geolocate control to the map.
-    map.addControl(new mapboxgl.GeolocateControl({
-        positionOptions: {
-            enableHighAccuracy: true
-        },
-        trackUserLocation: true
-    }));
-
 
     for (i = 0; i < locations.length; i++) {
         if (selectedAnimal == "All" || locations[i].description == selectedAnimal) {
