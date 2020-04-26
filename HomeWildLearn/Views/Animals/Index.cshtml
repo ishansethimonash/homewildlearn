@@ -102,24 +102,54 @@
 <!--Animal Cards -->
 <div class="layout-margin-8 mt-4">
     <div class="card-deck" id="myAnimals">
-        @foreach (var item in Model)
-        {
-            <div class="card card-shadow text-center" data-class="@Html.DisplayFor(modelItem => item.animal_class)">
-                <img class="card-img-top" src="~/Content/images/animals/Koala_demo_details.jpg" alt="Card image cap">
-                <div class="card-body">
-                    <h4 class="card-title">@Html.DisplayFor(modelItem => item.animal_name)</h4>
-                    <p class="card-text animal-type">Type: @Html.DisplayFor(modelItem => item.animal_class)</p>
-                    <div class="dropdown-divider"></div>
-                    <p class="card-text">
-                        <small class="text-muted"></small>
-                    </p>
-                    <a href="#">
-                        @Html.ActionLink("More About me!", "Details", new { id = item.animal_id }, new { @class = "btn btn-outline-primary" })
-                    </a>
-                </div>
-            </div>
-        }
 
+        @{
+            //This code block to neatly arrange cards
+            int test = 0;
+
+            foreach (var item in Model)
+            {
+                if (test % 5 == 0)
+                {
+                    <div class="w-100 d-none d-xl-block" >
+                    </div>
+                    <div class="card card-shadow text-center col-md-3 mb-4" data-class="@Html.DisplayFor(modelItem => item.animal_class)">
+                        <img class="card-img-top" src="~/Content/images/animals/Koala_demo_details.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">@Html.DisplayFor(modelItem => item.animal_name)</h4>
+                            <p class="card-text animal-type">Type: @Html.DisplayFor(modelItem => item.animal_class)</p>
+                            <div class="dropdown-divider"></div>
+                            <p class="card-text">
+                                <small class="text-muted"></small>
+                            </p>
+                            <a href="#">
+                                @Html.ActionLink("More About me!", "Details", new { id = item.animal_id }, new { @class = "btn btn-outline-primary" })
+                            </a>
+                        </div>
+                    </div>
+
+                }
+                else
+                {
+                    <div class="card card-shadow text-center col-md-3 mb-4" data-class="@Html.DisplayFor(modelItem => item.animal_class)" style="width: 18rem;">
+                        <img class="card-img-top" src="~/Content/images/animals/Koala_demo_details.jpg" alt="Card image cap">
+                        <div class="card-body">
+                            <h4 class="card-title">@Html.DisplayFor(modelItem => item.animal_name)</h4>
+                            <p class="card-text animal-type">Type: @Html.DisplayFor(modelItem => item.animal_class)</p>
+                            <div class="dropdown-divider"></div>
+                            <p class="card-text">
+                                <small class="text-muted"></small>
+                            </p>
+                            <a href="#">
+                                @Html.ActionLink("More About me!", "Details", new { id = item.animal_id }, new { @class = "btn btn-outline-primary" })
+                            </a>
+                        </div>
+                    </div>
+                }
+
+                test++;
+            }
+        }
     </div>
 </div>
 
@@ -153,26 +183,16 @@
 
         //filter based on checkbox
         $('input[type="checkbox"]').click(function () {
-            console.log("works")
+
+            console.log("Hello");
             var $checked = $('input[type="checkbox"]:checked');
             var $items = $('.card');
-            var filters = {};
-            var numFilters = 0;
-            if ($checked.length) {
+
+            if ($checked.length > 0) {
                 $('.card').hide();
 
                 $checked.each(function () {
-                    console.log($(this).val())
-                    filters[$(this).data('filter-type')] = $(this).val();
-                });
-
-                $items.each(function (i) {
-                    for (var key in filters) {
-                        console.log(key);
-                        if ($(this).data(key) == filters[key]) {
-                            $(this).show();
-                        }
-                    }
+                    $('.card[data-class=' + this.value + ']').show();
                 });
             } else {
                 $('.card').show();
