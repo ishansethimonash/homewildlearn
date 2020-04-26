@@ -1,0 +1,144 @@
+﻿@model IEnumerable<HomeWildLearn.Models.wildlife_locations>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+
+@* This is for the mapbox map. *@
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.9.1/mapbox-gl.css" rel="stylesheet" />
+@*This is used for the Geocoding Mapbox API*@
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.min.js'></script>
+<link rel='stylesheet' href='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v2.2.0/mapbox-gl-geocoder.css' type='text/css' />
+
+
+<style>
+    #marker {
+        background-image: url('https://img.freepik.com/free-vector/cute-koala-face-icon-gray-background_24911-2553.jpg');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    .mapboxgl-popup {
+        margin-top: -10px;
+        max-width: 200px;
+        animation: fadein 2.9s;
+    }
+
+    .mapboxgl-popup-close-button {
+        display: none;
+    }
+
+    .mapboxgl-popup-content {
+        border-radius: 10px;
+        box-shadow: 0px 2px 4px 2px rgba(0,0,0,.1);
+        border: 1px solid #929292;
+    }
+
+    /* Hide the old tip */
+    .mapboxgl-popup-tip {
+        display: none;
+    }
+
+    .mapboxgl-popup-content:before {
+        content: '';
+        position: absolute;
+        /* I've found 9px looks better than 10px */
+        top: -webkit-calc(100% - 9px);
+        top: calc(100% - 9px);
+        left: calc(50% - 10px);
+        height: 20px;
+        width: 20px;
+        background: white;
+        transform: rotate(45deg);
+        border-bottom: inherit;
+        border-right: inherit;
+        /* The shadow is translated down a bit so it doesn't show inside the pop-up */
+        box-shadow: 4px 4px 4px -1px rgba(0, 0, 0, 0.1);
+        z-index: 4;
+    }
+</style>
+
+
+<div class="ftco-blocks-cover-1">
+    <div class="site-section-cover overlay" data-stellar-background-ratio="0.5" style="background-image: url('../Content/images/mapaus.jpg')">
+        <div class="container">
+            <div class="row align-items-center ">
+                <div class="col-md-5 mt-5 pt-5">
+                    <span class="text-cursive h2 text-red">Welcome To Wild-HomeLearn</span>
+                    <p><a href="#" class="text-yellow">Lets..find what all animals are around me </a></p>
+                    <p><a href="index.html" class="text-white">Home</a> <span class="mx-0">/</span> <strong>Animals around me</strong></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section py-5 bg-warning">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-12 d-flex">
+                <h2 class="text-white m-0">Hey Kids  <small>- look at the below map to explore...</small></h2>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section">
+    <div class="dropdown">
+        <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">
+            Select Animal
+            <span class="caret"></span>
+        </button>
+        <ul class="dropdown-menu" id="animalFilter">
+            <!-- populating the dropdown with distinct animal name values-->
+            @foreach (var item in Model.GroupBy(x => x.Animal.animal_name).Select(x => x.First()))
+            {
+
+                <li><a value="@Html.DisplayName(item.Animal_id.ToString())">@Html.DisplayName(item.Animal.animal_name)</a></li>
+            }
+
+            <li><a href="#">1</a></li>
+        </ul>
+    </div>
+</div>
+
+<div id="map" style="height:300px"></div>
+
+<table>
+    @foreach (var item in Model)
+    {    
+        {
+            <tr class="coordinates">
+                <td class="description" hidden>
+                    @Html.DisplayFor(modelItem => item.Animal.animal_name)
+                </td>
+                <td hidden>
+                    @Html.DisplayFor(modelItem => item.Class)
+                </td>
+                <td class="latitude" hidden>
+                    @Html.DisplayFor(modelItem => item.Latitude)
+                </td>
+                <td class="longitude" hidden>
+                    @Html.DisplayFor(modelItem => item.Longitude)
+                </td>
+
+            </tr>
+        }
+    }
+</table>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/mapbox")
+}

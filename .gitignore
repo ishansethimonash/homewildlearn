@@ -214,7 +214,6 @@ UpgradeLog*.htm
 *.mdf
 *.ldf
 
-
 # Business Intelligence projects
 *.rdl.data
 *.bim.layout
