@@ -22,6 +22,12 @@ namespace HomeWildLearn.Controllers
             return View(db.wildlife_locations.ToList());
         }
 
+        public ActionResult IndividualLocation(String animalName)
+        {
+            //returning only the desired animal
+            return View(db.wildlife_locations.Where(x => x.Animal.animal_name == animalName).ToList());
+        }
+
         // GET: wildlife_locations/Details/5
         public ActionResult Details(int? id)
         {

@@ -102,7 +102,7 @@ map.on('load', function () {
 
             // create DOM element for the marker
             var el = document.createElement('div');
-            el.id = 'marker';
+            el.id = 'marker-koala';
 
 
             // create the marker

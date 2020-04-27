@@ -198,6 +198,7 @@
     <Compile Include="Controllers\AnimalsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
+    <Compile Include="Controllers\wildlife_detailsController.cs" />
     <Compile Include="Controllers\wildlife_locationsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -208,7 +209,9 @@
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\SendEmailViewModel.cs" />
+    <Compile Include="Models\WildlifeDetailModel.cs" />
     <Compile Include="Models\WildlifeLocationModel.cs" />
+    <Compile Include="Models\wildlife_details.cs" />
     <Compile Include="Models\wildlife_locations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -609,6 +612,12 @@
     <Content Include="Views\wildlife_locations\Details.cshtml" />
     <Content Include="Views\wildlife_locations\Edit.cshtml" />
     <Content Include="Views\wildlife_locations\Index.cshtml" />
+    <Content Include="Views\wildlife_details\Create.cshtml" />
+    <Content Include="Views\wildlife_details\Delete.cshtml" />
+    <Content Include="Views\wildlife_details\Details.cshtml" />
+    <Content Include="Views\wildlife_details\Edit.cshtml" />
+    <Content Include="Views\wildlife_details\Index.cshtml" />
+    <Content Include="Views\wildlife_locations\IndividualLocation.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

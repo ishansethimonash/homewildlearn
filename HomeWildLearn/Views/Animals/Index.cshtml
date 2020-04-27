@@ -114,7 +114,7 @@
                     <div class="w-100 d-none d-xl-block" >
                     </div>
                     <div class="card card-shadow text-center col-md-3 mb-4" data-class="@Html.DisplayFor(modelItem => item.animal_class)">
-                        <img class="card-img-top" src="~/Content/images/animals/Koala_demo_details.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.animal_explore_image)" alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">@Html.DisplayFor(modelItem => item.animal_name)</h4>
                             <p class="card-text animal-type">Type: @Html.DisplayFor(modelItem => item.animal_class)</p>
@@ -132,7 +132,7 @@
                 else
                 {
                     <div class="card card-shadow text-center col-md-3 mb-4" data-class="@Html.DisplayFor(modelItem => item.animal_class)" style="width: 18rem;">
-                        <img class="card-img-top" src="~/Content/images/animals/Koala_demo_details.jpg" alt="Card image cap">
+                        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.animal_explore_image)" alt="Card image cap">
                         <div class="card-body">
                             <h4 class="card-title">@Html.DisplayFor(modelItem => item.animal_name)</h4>
                             <p class="card-text animal-type">Type: @Html.DisplayFor(modelItem => item.animal_class)</p>

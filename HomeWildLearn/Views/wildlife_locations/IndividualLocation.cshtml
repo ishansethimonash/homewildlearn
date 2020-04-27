@@ -27,15 +27,6 @@
         cursor: pointer;
     }
 
-    #marker-quokka {
-        background-image: url('https://img.freepik.com/free-vector/cute-koala-face-icon-gray-background_24911-2553.jpg');
-        background-size: cover;
-        width: 50px;
-        height: 50px;
-        border-radius: 50%;
-        cursor: pointer;
-    }
-
     .mapboxgl-popup {
         margin-top: -10px;
         max-width: 200px;
@@ -90,35 +81,12 @@
     </div>
 </div>
 
-<div class="site-section py-5 bg-warning">
-    <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-12 d-flex">
-                <h2 class="text-white m-0">Hey Kids  <small>- look at the below map to explore...</small></h2>
-            </div>
-        </div>
-    </div>
-</div>
-
 <div class="site-section py-5 bg-success" id="sec3">
     <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-12 d-flex">
-                <h1 class="text-white m-0">Lets Select animals from this button</h1><br>
-                <hr>
-                <div class="dropdown">
-                    <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown">
-                        Lets Select Animal..
-                    </button>
-                    <div class="dropdown-menu" id="animalFilter">
-                        @foreach (var item in Model.GroupBy(x => x.Animal.animal_name).Select(x => x.First()))
-                        {
-
-                            <a class="dropdown-item" href="#sec3" value="@Html.DisplayName(item.Animal_id.ToString())">@Html.DisplayName(item.Animal.animal_name)</a>
-                        }
-
-                    </div>
-                </div>
+                <h1 class="text-white m-0">Try to spot a @Html.DisplayName(Model.GroupBy(x => x.Animal.animal_name).Select(x => x.First().Animal.animal_name).First()) Nearby</h1>
+                <br />
             </div>
         </div>
     </div>
