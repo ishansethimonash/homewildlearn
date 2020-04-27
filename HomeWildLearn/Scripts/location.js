@@ -1,4 +1,4 @@
-﻿/*** This is a simple JavaScript demonstration of how to call MapBox API to load the maps.* I have set the default configuration to enable the geocoder and the navigation control.* https://www.mapbox.com/mapbox-gl-js/example/popup-on-click/* */
+﻿// This javascript file contains the logic for mapbox handling of animal location
 
 const TOKEN = "pk.eyJ1Ijoic2hhaHJvb3FwYXRoYW4iLCJhIjoiY2sweHQ2cGI2MDkzMDNibzN1aDd2b3NxZCJ9.mkmi_lQe7LYTmNSsV8V8bw";
 var locations = [];
@@ -20,11 +20,13 @@ $(".coordinates").each(function () {
     var longitude = $(".longitude", this).text().trim();
     var latitude = $(".latitude", this).text().trim();
     var description = $(".description", this).text().trim();
+    var animalClass = $(".animal-class", this).text().trim();
     // Create a point data structure to hold the values.
     var point = {
         "latitude": latitude,
         "longitude": longitude,
-        "description": description
+        "description": description,
+        "animalClass": animalClass
     };
     // Push them all into an array.
     locations.push(point);
@@ -54,7 +56,7 @@ mapboxgl.accessToken = TOKEN;
 var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v10?optimize=true',
-    zoom: 11,
+    zoom: 7,
     center: [locations[0].longitude, locations[0].latitude]
 });
 
@@ -96,13 +98,34 @@ map.on('load', function () {
 
             // create the popup
             var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-                '' + locations[i].description
+                '<b>Animal:</b> ' + locations[i].description + '</br>' +
+                '<b>Type:</b> ' + locations[i].animalClass
             );
 
 
-            // create DOM element for the marker
-            var el = document.createElement('div');
-            el.id = 'marker-koala';
+            // create DOM element for the marker for all animals
+            if (locations[i].description == 'Koala') {
+                var el = document.createElement('div');
+                el.id = 'marker-koala';
+            }
+            else if (locations[i].description == 'Quokka')
+            {
+                var el = document.createElement('div');
+                el.id = 'marker-quokka';
+            }
+            else if (locations[i].description == 'Kangaroo') {
+                var el = document.createElement('div');
+                el.id = 'marker-kangaroo';
+            }
+            else if (locations[i].description == 'Penguin') {
+                var el = document.createElement('div');
+                el.id = 'marker-penguin';
+            }
+            else if (locations[i].description == 'Emu') {
+                var el = document.createElement('div');
+                el.id = 'marker-emu';
+            }
+            
 
 
             // create the marker
@@ -138,13 +161,33 @@ function refreshMap() {
 
             // create the popup
             var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
-                '' + locations[i].description
+                '<b>Animal:</b> ' + locations[i].description + '</br>' +
+                '<b>Type:</b> ' + locations[i].animalClass
             );
 
 
-            // create DOM element for the marker
-            var el = document.createElement('div');
-            el.id = 'marker';
+
+            // create DOM element for the marker for all animals
+            if (locations[i].description == 'Koala') {
+                var el = document.createElement('div');
+                el.id = 'marker-koala';
+            }
+            else if (locations[i].description == 'Quokka') {
+                var el = document.createElement('div');
+                el.id = 'marker-quokka';
+            }
+            else if (locations[i].description == 'Kangaroo') {
+                var el = document.createElement('div');
+                el.id = 'marker-kangaroo';
+            }
+            else if (locations[i].description == 'Penguin') {
+                var el = document.createElement('div');
+                el.id = 'marker-penguin';
+            }
+            else if (locations[i].description == 'Emu') {
+                var el = document.createElement('div');
+                el.id = 'marker-emu';
+            }
 
             // create the marker
             var marker = new mapboxgl.Marker(el)

@@ -28,13 +28,42 @@
     }
 
     #marker-quokka {
-        background-image: url('https://img.freepik.com/free-vector/cute-koala-face-icon-gray-background_24911-2553.jpg');
+        background-image: url('https://t4.ftcdn.net/jpg/03/28/80/39/240_F_328803980_UP7YyieahbOcz33Pm6PCxJ7VDRAKbWhw.jpg');
         background-size: cover;
         width: 50px;
         height: 50px;
         border-radius: 50%;
         cursor: pointer;
     }
+
+    #marker-kangaroo {
+        background-image: url('https://image.freepik.com/free-vector/cute-kangaroo-with-baby_72147495344.jpg');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    #marker-penguin {
+        background-image: url('https://img.freepik.com/free-vector/pinguin_53876-57854.jpg');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+    #marker-emu {
+        background-image: url('https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX26932586.jpg');
+        background-size: cover;
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+        cursor: pointer;
+    }
+
+
 
     .mapboxgl-popup {
         margin-top: -10px;
@@ -135,7 +164,7 @@
                 <td class="description" hidden>
                     @Html.DisplayFor(modelItem => item.Animal.animal_name)
                 </td>
-                <td hidden>
+                <td class="animal-class" hidden>
                     @Html.DisplayFor(modelItem => item.Class)
                 </td>
                 <td class="latitude" hidden>
