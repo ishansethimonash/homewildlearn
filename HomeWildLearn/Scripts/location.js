@@ -108,8 +108,7 @@ map.on('load', function () {
                 var el = document.createElement('div');
                 el.id = 'marker-koala';
             }
-            else if (locations[i].description == 'Quokka')
-            {
+            else if (locations[i].description == 'Quokka') {
                 var el = document.createElement('div');
                 el.id = 'marker-quokka';
             }
@@ -125,7 +124,7 @@ map.on('load', function () {
                 var el = document.createElement('div');
                 el.id = 'marker-emu';
             }
-            
+
 
 
             // create the marker
@@ -137,7 +136,7 @@ map.on('load', function () {
             currentMarkers.push(marker);
         }
 
-        
+
     }
 
 

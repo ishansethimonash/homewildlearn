@@ -12,14 +12,13 @@ namespace HomeWildLearn.Controllers
 {
     public class wildlife_locationsController : Controller
     {
-        private WildlifeLocationModel db = new WildlifeLocationModel();
-        //to access Animal namde from animal model
-        private AnimalModel adb = new AnimalModel();
+        private AnimalModel2 db = new AnimalModel2();
+
         // GET: wildlife_locations
         public ActionResult Index()
         {
-           
-            return View(db.wildlife_locations.ToList());
+            var wildlife_locations = db.wildlife_locations.Include(w => w.Animal);
+            return View(wildlife_locations.ToList());
         }
 
         public ActionResult IndividualLocation(String animalName)
@@ -46,6 +45,7 @@ namespace HomeWildLearn.Controllers
         // GET: wildlife_locations/Create
         public ActionResult Create()
         {
+            ViewBag.Animal_id = new SelectList(db.Animals, "animal_id", "animal_name");
             return View();
         }
 
@@ -63,6 +63,7 @@ namespace HomeWildLearn.Controllers
                 return RedirectToAction("Index");
             }
 
+            ViewBag.Animal_id = new SelectList(db.Animals, "animal_id", "animal_name", wildlife_locations.Animal_id);
             return View(wildlife_locations);
         }
 
@@ -78,6 +79,7 @@ namespace HomeWildLearn.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Animal_id = new SelectList(db.Animals, "animal_id", "animal_name", wildlife_locations.Animal_id);
             return View(wildlife_locations);
         }
 
@@ -94,6 +96,7 @@ namespace HomeWildLearn.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
+            ViewBag.Animal_id = new SelectList(db.Animals, "animal_id", "animal_name", wildlife_locations.Animal_id);
             return View(wildlife_locations);
         }
 

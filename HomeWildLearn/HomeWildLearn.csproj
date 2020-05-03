@@ -195,6 +195,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\Animals1Controller.cs" />
     <Compile Include="Controllers\AnimalsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
@@ -203,15 +204,17 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Animal.cs" />
     <Compile Include="Models\AnimalModel.cs" />
+    <Compile Include="Models\AnimalModel2.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Models\SendEmailViewModel.cs" />
-    <Compile Include="Models\WildlifeDetailModel.cs" />
     <Compile Include="Models\WildlifeLocationModel.cs" />
     <Compile Include="Models\wildlife_details.cs" />
+    <Compile Include="Models\wildlife_detailsModel.cs" />
     <Compile Include="Models\wildlife_locations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
@@ -234,6 +237,7 @@
     <Content Include="Content\camp.jpg" />
     <Content Include="Content\car.jpg" />
     <Content Include="Content\emu.jpg" />
+    <Content Include="Content\emu.mp4" />
     <Content Include="Content\exp.jpg" />
     <Content Include="Content\images\animals\Canva - Emu On Ground.jpg" />
     <Content Include="Content\images\animals\cass.jpg" />
@@ -241,17 +245,48 @@
     <Content Include="Content\images\animals\dingo.jpg" />
     <Content Include="Content\images\animals\echidna.jpg" />
     <Content Include="Content\images\animals\emu.jpg" />
+    <Content Include="Content\images\animals\emu1.jpg" />
+    <Content Include="Content\images\animals\emu2.jpg" />
     <Content Include="Content\images\animals\jellyfish.jpg" />
+    <Content Include="Content\images\animals\kangaroo.jpg" />
     <Content Include="Content\images\animals\Koala_demo_details.jpg" />
     <Content Include="Content\images\animals\koka.jpg" />
+    <Content Include="Content\images\animals\penguin.jpg" />
     <Content Include="Content\images\animals\plat.jpg" />
+    <Content Include="Content\images\animals\Quokka.jpg" />
     <Content Include="Content\images\animals\spider.jpg" />
     <Content Include="Content\images\animals\taipan.jpg" />
     <Content Include="Content\images\animals\wombat.jpg" />
+    <Content Include="Content\images\animals\zoo.jpeg" />
     <Content Include="Content\images\boys.jpg" />
     <Content Include="Content\images\camp1.jpg" />
     <Content Include="Content\images\fact1.png" />
     <Content Include="Content\images\facts2.jpg" />
+    <Content Include="Content\images\gallery\emu1.jpg" />
+    <Content Include="Content\images\gallery\emu2.jpg" />
+    <Content Include="Content\images\gallery\emu3.jpg" />
+    <Content Include="Content\images\gallery\emu4.jpg" />
+    <Content Include="Content\images\gallery\emu5.jpg" />
+    <Content Include="Content\images\gallery\kang1.jpg" />
+    <Content Include="Content\images\gallery\kang2.jpg" />
+    <Content Include="Content\images\gallery\kang3.jpg" />
+    <Content Include="Content\images\gallery\kang4.jpg" />
+    <Content Include="Content\images\gallery\kang5.jpg" />
+    <Content Include="Content\images\gallery\koala1.jpg" />
+    <Content Include="Content\images\gallery\koala2.jpg" />
+    <Content Include="Content\images\gallery\koala3.jpg" />
+    <Content Include="Content\images\gallery\koala4.jpg" />
+    <Content Include="Content\images\gallery\koala5.jpg" />
+    <Content Include="Content\images\gallery\peng1.jpg" />
+    <Content Include="Content\images\gallery\peng2.jpg" />
+    <Content Include="Content\images\gallery\peng3.jpg" />
+    <Content Include="Content\images\gallery\peng4.jpg" />
+    <Content Include="Content\images\gallery\peng5.jpg" />
+    <Content Include="Content\images\gallery\quo1.jpg" />
+    <Content Include="Content\images\gallery\quo2.jpg" />
+    <Content Include="Content\images\gallery\quo3.jpg" />
+    <Content Include="Content\images\gallery\quo4.jpg" />
+    <Content Include="Content\images\gallery\quo5.jpg" />
     <Content Include="Content\images\greenback.jpg" />
     <Content Include="Content\images\curology-A9CUBfntOFQ-unsplash.jpg" />
     <Content Include="Content\images\flaticon\backup.txt" />
@@ -308,9 +343,11 @@
     <Content Include="Content\jquery-ui.theme.css" />
     <Content Include="Content\jquery.fancybox.min.css" />
     <Content Include="Content\jungle.mp4" />
+    <Content Include="Content\kangaroo.mpeg" />
     <Content Include="Content\kid.jpg" />
     <Content Include="Content\kids.jpg" />
     <Content Include="Content\kidstudy.jpg" />
+    <Content Include="Content\koala[1].mp3" />
     <Content Include="Content\landscape.jpg" />
     <Content Include="Content\learn.jpg" />
     <Content Include="Content\lose.gif" />
@@ -325,11 +362,13 @@
     <Content Include="Content\owl.theme.default.min.css" />
     <Content Include="Content\par.jpg" />
     <Content Include="Content\parent.jpg" />
+    <Content Include="Content\penguin.mpeg" />
     <Content Include="Content\pic1.jpg" />
     <Content Include="Content\pic2.jpg" />
     <Content Include="Content\question.jpg" />
     <Content Include="Content\qui.jpg" />
     <Content Include="Content\quiz.jpg" />
+    <Content Include="Content\quokka.mpeg" />
     <Content Include="Content\rain2.jpg" />
     <Content Include="Content\rainforest-during-foggy-day-975771 %281%29.jpg" />
     <Content Include="Content\rainforest.jpg" />
@@ -344,6 +383,7 @@
     <Content Include="css\bootstrap-theme.min.css" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
+    <Content Include="css\details.css" />
     <Content Include="css\modern-business.css" />
     <Content Include="css\quiz.css" />
     <Content Include="favicon.ico" />
@@ -533,6 +573,7 @@
     <Content Include="Content\scss\_site-base.scss" />
     <Content Include="Content\scss\_site-blocks.scss" />
     <Content Include="Content\scss\_site-navbar.scss" />
+    <None Include="Properties\PublishProfiles\HomeWildLearn - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\HomeWildLearn20200419011418 - Web Deploy.pubxml" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery-migrate-3.0.0.js" />
@@ -556,10 +597,13 @@
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\owl.carousel.min.js" />
     <Content Include="Scripts\popper.min.js" />
+    <Content Include="Scripts\quizTemplate2 .js" />
     <Content Include="Scripts\quizTemplate1.js" />
     <Content Include="Scripts\slick.min.js" />
     <Content Include="Scripts\typed.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -607,6 +651,11 @@
     <Content Include="Views\Home\InterestingFacts.cshtml" />
     <Content Include="Views\Home\WhereTo.cshtml" />
     <Content Include="Views\Home\LearnCamping.cshtml" />
+    <Content Include="Views\Animals1\Create.cshtml" />
+    <Content Include="Views\Animals1\Delete.cshtml" />
+    <Content Include="Views\Animals1\Details.cshtml" />
+    <Content Include="Views\Animals1\Edit.cshtml" />
+    <Content Include="Views\Animals1\Index.cshtml" />
     <Content Include="Views\wildlife_locations\Create.cshtml" />
     <Content Include="Views\wildlife_locations\Delete.cshtml" />
     <Content Include="Views\wildlife_locations\Details.cshtml" />
@@ -616,7 +665,6 @@
     <Content Include="Views\wildlife_details\Delete.cshtml" />
     <Content Include="Views\wildlife_details\Details.cshtml" />
     <Content Include="Views\wildlife_details\Edit.cshtml" />
-    <Content Include="Views\wildlife_details\Index.cshtml" />
     <Content Include="Views\wildlife_locations\IndividualLocation.cshtml" />
   </ItemGroup>
   <ItemGroup />
