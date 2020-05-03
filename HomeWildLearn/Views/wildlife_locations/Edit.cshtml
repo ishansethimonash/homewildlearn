@@ -19,9 +19,9 @@
         @Html.HiddenFor(model => model.Location_id)
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Animal_id, htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Animal_id, "Animal_id", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Animal_id, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.DropDownList("Animal_id", null, htmlAttributes: new { @class = "form-control" })
                 @Html.ValidationMessageFor(model => model.Animal_id, "", new { @class = "text-danger" })
             </div>
         </div>

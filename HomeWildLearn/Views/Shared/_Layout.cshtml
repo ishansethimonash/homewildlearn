@@ -62,13 +62,13 @@
                                     Playfield
                                 </a>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="@Url.Action("AnimalsAroundMe", "Home" )">Animals Around Me!</a>
+                                    <a class="dropdown-item" href="@Url.Action("Index", "wildlife_locations" )">Animals Around Me!</a>
                                     <a class="dropdown-item" href="@Url.Action("TestYourKnowledge", "Home" )">Let's Test Your Knowledge</a>
-                                    <a class="dropdown-item" href="@Url.Action("Index", "Animals" )">Explore Wild-Animals</a>
-                                    <a class="dropdown-item" href="@Url.Action("Parents", "Home" )">Wondering how animals Migrate?</a>
+                                    <a class="dropdown-item" href="@Url.Action("Index", "Animals1" )">Explore Wild-Animals</a>
+                                    
                                     <a class="dropdown-item" href="@Url.Action("InterestingFacts", "Home" )">Interesting Facts</a>
-                                    <a class="dropdown-item" href="@Url.Action("WhereTo", "Home" )">"Where to go now? Zoo, forest or park?</a>
-                                    <a class="dropdown-item" href="@Url.Action("LearnCamping", "Home" )">Want to Learn Camping?</a>
+                                    <a class="dropdown-item" href="@Url.Action("WhereTo", "Home" )">Where to go now? Zoo, forest or park?</a>
+                                    
                                 </div>
                             </li>
                             @*<li><a href="@Url.Action("Kids", "Home" )" class="nav-link">Kids</a></li>*@
@@ -120,7 +120,13 @@
                 </div>
             </footer>
         </div>
+    <script language="javascript">
+        // XSS attack code prevention by TIM
+            <!--
+        if (self != top)
+            -->
 
+    </script>
         <script src="~/Scripts/jquery-3.3.1.min.js"></script>
         <script src="~/Scripts/jquery-migrate-3.0.0.js"></script>
         <script src="~/Scripts/popper.min.js"></script>
