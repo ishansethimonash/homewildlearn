@@ -1,0 +1,82 @@
+﻿@model IEnumerable<HomeWildLearn.Models.wildlife_details>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Fact_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Fact_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Animal_Sound)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Animal_Image_Main)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Animal_Image_1)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Animal_Image_2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Animal_Image_3)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Animal_Image_4)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Animal_Image_5)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Animal.animal_description)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fact_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Animal_Sound)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Animal_Image_Main)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Animal_Image_1)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Animal_Image_2)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Animal_Image_3)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Animal_Image_4)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Animal_Image_5)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Animal_id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Animal_id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Animal_id })
+        </td>
+    </tr>
+}
+
+</table>
