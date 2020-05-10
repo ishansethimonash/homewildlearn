@@ -1,0 +1,1 @@
+﻿select * from wildlife_locations where CAST(Latitude AS FLOAT) < '-90'

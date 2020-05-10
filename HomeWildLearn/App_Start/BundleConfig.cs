@@ -34,6 +34,8 @@ namespace HomeWildLearn
             // Bundle for Mapbox js
             bundles.Add(new ScriptBundle("~/bundles/mapbox").Include(
                             "~/Scripts/location.js"));
+            BundleTable.EnableOptimizations = false;
+
         }
     }
 }

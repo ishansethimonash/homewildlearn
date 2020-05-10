@@ -1,3 +1,4 @@
+    {
 ﻿using System;
 using System.Collections.Generic;
 using System.Data;
@@ -7,12 +8,14 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using HomeWildLearn.Models;
+using Rotativa;
+
 
 namespace HomeWildLearn.Controllers
 {
     public class wildlife_detailsController : Controller
     {
-        private WildlifeDetailModel db = new WildlifeDetailModel();
+        private AnimalModel2 db = new AnimalModel2();
 
         // GET: wildlife_details
         public ActionResult Index()
@@ -35,11 +38,22 @@ namespace HomeWildLearn.Controllers
             return View(wildlife_details);
         }
 
-        // GET: wildlife_details/Create
-        public ActionResult Create()
+        //Method to export the details of an animal
+        public ActionResult ExportPDF(String id)
         {
-            return View();
+            return new Rotativa.ActionAsPdf("Details/" + id);
         }
+
+        //public ActionResult ExportPDF(String id)
+        //{
+        //    return new Rotativa.ViewAsPdf("Details/" + id);
+        //}
+
+        //// GET: wildlife_details/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
         // POST: wildlife_details/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 

@@ -62,7 +62,7 @@
                 <div class="col-md-5 mt-5 pt-5">
                     <span class="text-cursive h2 text-red">Welcome To Wild-HomeLearn</span>
                     <p><a href="#" class="text-yellow">Explore and Search wild life animals</a></p>
-                    <p><a href="index.html" class="text-white">Home</a> <span class="mx-0">/</span> <strong>Explore wildlife </strong></p>
+                    <p><a href="#" class="text-white">Home</a> <span class="mx-0">/</span> <strong>Explore wildlife </strong></p>
 
                 </div>
 
@@ -74,157 +74,59 @@
 
 <nav class="navbar navbar-light justify-content-center mt-4">
     <form class="form-inline">
-        <!-- textbox for search -->
-        <input class="form-control form-control-lg mr-sm-2" type="search" placeholder="Filter by name" aria-label="Search" id="search" onkeyup="myFunction()">
-        <!-- Sort dropdown-->
+        <input class="form-control form-control-lg mr-sm-2" type="search" placeholder="Filter by name" aria-label="Search" id="search">
         <div class="btn-group">
             <button type="button" class="btn btn-primary btn-lg mr-3 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" id="btnSort1">Sort</button>
             <div class="dropdown-menu">
-                <a class="dropdown-item" id="btnSortAsc">Sort By Name (A to Z)</a>
-                <a class="dropdown-item" id="btnSortDesc">Sort By Name (Z to A)</a>
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
                 <div class="dropdown-divider"></div>
-                <a class="dropdown-item" id="btnSortAscType">Sort By Type (A to Z)</a>
-                <a class="dropdown-item" id="btnSortDescType">Sort By Type (Z to A)</a>
+                <a class="dropdown-item" href="#">Separated link</a>
             </div>
         </div>
+
+        <!-- <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button> -->
     </form>
 </nav>
-<div class="row align-items-center justify-content-center">
-    What kind of animals do you wanna see?
-    <div class="checkbox mx-1 pt-3">
-        <label><input type="checkbox" value="Mammal" data-filter-type="class">Mammal</label>
-    </div>
-    <div class="checkbox mx-1 pt-3">
-        <label><input type="checkbox" value="Insect" data-filter-type="class">Insect</label>
-    </div>
-</div>
 
 <!--Animal Cards -->
 <div class="layout-margin-8 mt-4">
-    <div class="card-deck" id="myAnimals">
-
-        @{
-            //This code block to neatly arrange cards
-            int test = 0;
-
-            foreach (var item in Model)
-            {
-                if (test % 5 == 0)
-                {
-                    <div class="w-100 d-none d-xl-block" >
-                    </div>
-                    <div class="card card-shadow text-center col-md-3 mb-4" data-class="@Html.DisplayFor(modelItem => item.animal_class)">
-                        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.animal_explore_image)" alt="Card image cap">
-                        <div class="card-body">
-                            <h4 class="card-title">@Html.DisplayFor(modelItem => item.animal_name)</h4>
-                            <p class="card-text animal-type">Type: @Html.DisplayFor(modelItem => item.animal_class)</p>
-                            <div class="dropdown-divider"></div>
-                            <p class="card-text">
-                                <small class="text-muted"></small>
-                            </p>
-                            <a href="#">
-                                @Html.ActionLink("More About me!", "Details", new { id = item.animal_id }, new { @class = "btn btn-outline-primary" })
-                            </a>
-                        </div>
-                    </div>
-
-                }
-                else
-                {
-                    <div class="card card-shadow text-center col-md-3 mb-4" data-class="@Html.DisplayFor(modelItem => item.animal_class)" style="width: 18rem;">
-                        <img class="card-img-top" src="@Html.DisplayFor(modelItem => item.animal_explore_image)" alt="Card image cap">
-                        <div class="card-body">
-                            <h4 class="card-title">@Html.DisplayFor(modelItem => item.animal_name)</h4>
-                            <p class="card-text animal-type">Type: @Html.DisplayFor(modelItem => item.animal_class)</p>
-                            <div class="dropdown-divider"></div>
-                            <p class="card-text">
-                                <small class="text-muted"></small>
-                            </p>
-                            <a href="#">
-                                @Html.ActionLink("More About me!", "Details", new { id = item.animal_id }, new { @class = "btn btn-outline-primary" })
-                            </a>
-                        </div>
-                    </div>
-                }
-
-                test++;
-            }
+    <div class="card-deck">
+        @foreach (var item in Model)
+        {
+            <div class="card card-shadow text-center">
+                <img class="card-img-top" src="~/Content/images/animals/Koala_demo_details.jpg" alt="Card image cap">
+                <div class="card-body">
+                    <h4 class="card-title">@Html.DisplayFor(modelItem => item.animal_name)</h4>
+                    <p class="card-text">Mammal</p>
+                    <div class="dropdown-divider"></div>
+                    <p class="card-text">
+                        <small class="text-muted">I am an animal</small>
+                    </p>
+                    <a href="#">
+                        @Html.ActionLink("More About me!", "Details", new { id = item.animal_id }, new { @class = "btn btn-outline-primary" })
+                    </a>
+                </div>
+            </div>
         }
+
     </div>
 </div>
 
 
 
 <script>
-    //function to filter case-insensitive
-    function myFunction() {
-        console.log("Hello");
-        var input, filter, cards, cardContainer, h4, title, i;
-        input = document.getElementById("search");
-        filter = input.value.toUpperCase();
-        cardContainer = document.getElementById("myAnimals");
-        cards = cardContainer.getElementsByClassName("card");
-        for (i = 0; i < cards.length; i++) {
-            title = cards[i].querySelector(".card-body h4.card-title");
-            if (title.innerText.toUpperCase().indexOf(filter) > -1) {
-                cards[i].style.display = "";
-            } else {
-                cards[i].style.display = "none";
-            }
-        }
-    }
-
     $(document).ready(function () {
-        //$('#search').keyup(function () {
-        //    $('.card').removeClass('d-none');
-        //    var filter = $(this).val(); // get the value of the input, which we filter on
-        //    $('.card-deck').find('.card .card-body h4:not(:contains("' + filter + '"))').parent().parent().addClass('d-none');
-        //})
-
-        //filter based on checkbox
-        $('input[type="checkbox"]').click(function () {
-
-            console.log("Hello");
-            var $checked = $('input[type="checkbox"]:checked');
-            var $items = $('.card');
-
-            if ($checked.length > 0) {
-                $('.card').hide();
-
-                $checked.each(function () {
-                    $('.card[data-class=' + this.value + ']').show();
-                });
-            } else {
-                $('.card').show();
-            }
-        });
-
-        // To sort by name in Ascending order
-        $('#btnSortAsc').click(function () {
+        $('#search').keyup(function () {
+            $('.card').removeClass('d-none');
+            var filter = $(this).val(); // get the value of the input, which we filter on
+            $('.card-deck').find('.card .card-body h4:not(:contains("' + filter + '"))').parent().parent().addClass('d-none');
+        })
+        $('#btnSort').click(function () {
             $('.card-deck .card').sort(function (a, b) {
                 return $(a).find(".card-title").text() > $(b).find(".card-title").text() ? 1 : -1;
             }).appendTo(".card-deck");
-        });
-
-        // To sort by name in Descending order
-        $('#btnSortDesc').click(function () {
-            $('.card-deck .card').sort(function (a, b) {
-                return $(a).find(".card-title").text() < $(b).find(".card-title").text() ? 1 : -1;
-            }).appendTo(".card-deck");
-        });
-
-        // To sort by type in Ascending order
-        $('#btnSortAscType').click(function () {
-            $('.card-deck .card').sort(function (a, b) {
-                return $(a).find(".animal-type").text() > $(b).find(".animal-type").text() ? 1 : -1;
-            }).appendTo(".card-deck");
-        });
-
-        // To sort by type in Descending order
-        $('#btnSortDescType').click(function () {
-            $('.card-deck .card').sort(function (a, b) {
-                return $(a).find(".animal-type").text() < $(b).find(".animal-type").text() ? 1 : -1;
-            }).appendTo(".card-deck");
-        });
+        })
     });
 </script>

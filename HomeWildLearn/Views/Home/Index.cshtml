@@ -1,10 +1,4 @@
-﻿﻿
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-
-<!------ Include the above in your HEAD tag ---------->
-
+﻿<!------ Include the above in your HEAD tag ---------->
 <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css">
 <style>
 
@@ -70,13 +64,28 @@
     }
 </style>
 
+<script language="JavaScript">
+<!--hide
+
+var password;
+    var pass1 = "hdplease";
+    var passFlag = false;
+
+password=prompt('Please enter your password to view this page!','');
+
+    if (password == pass1) {
+        
+    } else {
+        alert('enter correct password');
+        window.location = "https://wildhomelearn.ml";
+    }
 
 
-
-
+//-->
+</script>
 
 <div class="ftco-blocks-cover-1">
-    <div class="site-section-cover overlay parallax" id="parallax-cta" data-stellar-background-ratio="0.5" style="background-image: url('../Content/images/boys.jpg')">
+    <div class="site-section-cover"  data-stellar-background-ratio="0.5" style="background-image: url('../Content/images/boys.jpg')">
         <div class="container">
             <div class="row align-items-center ">
                 <div class="col-md-5 mt-5 pt-5">
@@ -85,12 +94,10 @@
                 </div>
                 <a class="ct-btn-scroll ct-js-btn-scroll" href="#sec1"><img alt="Arrow Down Icon" src="https://raw.githubusercontent.com/solodev/scroll-down-anchor/master/images/arrow-down-1.png"></a>
 
-
             </div>
         </div>
     </div>
 </div>
-
 <div class="site-section py-5 bg-warning" id="sec1">
     <div class="container">
         <div class="row justify-content-center">
@@ -101,7 +108,6 @@
         </div>
     </div>
 </div>
-
 <div class="site-section bg-info">
     <div class="container">
         <div class="row mb-5">
@@ -115,25 +121,23 @@
                     <span class="img-wrap"><img src="~/Content/images/flaticon/svg/pawprint.svg" alt="Image" class="img-fluid"></span>
                     <h3 class="text-teal">Animals Around Me !</h3>
                     <p> Lets's check which animals are around me.  </p>
-                    <p><a href="@Url.Action("AnimalsAroundMe")" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                    <p><a href="@Url.Action("Index", "wildlife_locations")" class="btn btn-primary btn-custom-1 mt-4">Lets Explore!!</a></p>
                 </div>
             </div>
-
             <div class="col-lg-4">
                 <div class="package text-center bg-white">
                     <span class="img-wrap"><img src="~/Content/images/flaticon/svg/australia.svg" alt="Image" class="img-fluid"></span>
-                    <h3 class="text-teal">Expolore Wild-Animals</h3>
+                    <h3 class="text-teal">Explore Wild-Animals</h3>
                     <p>Let's explore more about wild animals. Search on!</p>
-                    <p><a href="@Url.Action("Index", "Animals" )" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                    <p><a href="@Url.Action("Index", "Animals1")" class="btn btn-primary btn-custom-1 mt-4">Lets Explore!!</a></p>
                 </div>
             </div>
-
             <div class="col-lg-4">
                 <div class="package text-center bg-white">
                     <span class="img-wrap"><img src="~/Content/images/flaticon/svg/birds.svg" alt="Image" class="img-fluid"></span>
                     <h3 class="text-teal">How animals Migrate?</h3>
                     <p>Wondering how animals migrate? Lets find out!!</p>
-                    <p><a href="#" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                    <p><a  class="btn btn-primary btn-custom-1 mt-4" disable>Lets Explore!!</a></p>
                 </div>
             </div>
         </div>
@@ -144,25 +148,97 @@
                     <span class="img-wrap"><img src="~/Content/images/flaticon/svg/search.svg" alt="Image" class="img-fluid"></span>
                     <h3 class="text-teal">Interesting Facts</h3>
                     <p> Learn some cool and interesting facts about wildlife.</p>
-                    <p><a href="@Url.Action("InterestingFacts")" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                    <p><a href="@Url.Action("InterestingFacts")" class="btn btn-primary btn-custom-1 mt-4">Lets Explore!!</a></p>
                 </div>
             </div>
-
             <div class="col-lg-4">
                 <div class="package text-center bg-white">
                     <span class="img-wrap"><img src="~/Content/images/flaticon/svg/forest.svg" alt="Image" class="img-fluid"></span>
                     <h3 class="text-teal">Where to go Zoo, Forest or Park</h3>
                     <p>Confused? Can't decide where to go for wild animal lookout?</p>
-                    <p><a href="@Url.Action("WhereTo")" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                    <p><a href="@Url.Action("WhereTo")" class="btn btn-primary btn-custom-1 mt-4">Lets Explore!!</a></p>
                 </div>
             </div>
-
             <div class="col-lg-4">
                 <div class="package text-center bg-white">
                     <span class="img-wrap"><img src="~/Content/images/flaticon/svg/camping-tent.svg" alt="Image" class="img-fluid"></span>
                     <h3 class="text-teal">Want to learn "CAMPING?"</h3>
                     <p>Do you want to experience and learn camping?</p>
-                    <p><a href="@Url.Action("LearnCamping")" class="btn btn-primary btn-custom-1 mt-4">Learn More</a></p>
+                    <p><a  class="btn btn-primary btn-custom-1 mt-4" disable>Lets Explore!!</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="site-section bg-warning">
+    <div class="container">
+        <div class="row mb-5">
+            <div class="col-12 text-center">
+                <span class="text-cursive h5 text-red d-block">Most Searched Animals By - Our Wild Kids</span>
+            </div>
+        </div>
+        <div class="row justify-content-center">
+            <div class="col-md-8">
+                <div class="testimonial-3-wrap">
+
+                    <div class="owl-carousel nonloop-block-13">
+                        <div class="testimonial-3 d-flex">
+                            <div class="vcard-wrap mr-5">
+                                <img src="~/Content/images/koalas.jpg" alt="Image" class="vcard img-fluid">
+                            </div>
+                            <div class="text">
+                                <h3>Koala</h3>
+                                <p>Due to Koala's cuteness its the most searched animal on our website.</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-3 d-flex">
+                            <div class="vcard-wrap mr-5">
+                                <img src="~/Content/images/animals/Quokka.jpg" alt="Image" class="vcard img-fluid">
+                            </div>
+                            <div class="text">
+                                <h3>Quokka</h3>
+                                <p>Always smiling....Its the second most searched animal on WildHomeLearn</p>
+                            </div>
+                        </div>
+                        <div class="testimonial-3 d-flex">
+                            <div class="vcard-wrap mr-5">
+                                <img src="~/Content/images/animals/kangaroo.jpg" alt="Image" class="vcard img-fluid">
+                            </div>
+                            <div class="text">
+                                <h3>Kangaroo</h3>
+                                <p>Lets do HOP! HOP!...being the native animal of Australia, its the third most searced animal around here.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<div class="site-section">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="block-2 red">
+                    <span class="wrap-icon">
+                        <span class="icon-child"></span>
+                    </span>
+                    <h2>Wild Kids</h2>
+                    <p>By analyzing children's preferences and learning characteristics, we designed interactive teaching models that are attractive to children. Children's attention is captured by video to study and learn about Australian wildlife, and the learning results are detected by interactive game mode to ensure the quality of children's learning.</p>
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="block-2 yellow">
+                    <span class="wrap-icon">
+                        <span class="icon-paw"></span>
+                    </span>
+                    <h2>Wild Learn</h2>
+                    <p>Wild HomeLearn is a non-profit online learning platform focusing on Australian ecosystems. We are committed to helping people learn about Australia's wildlife through our free policy. We focus on helping children living in Australia learn about their native wild animals and camping. Therefore we ensure the best qualit of knowledge to you.</p>
                 </div>
             </div>
         </div>
@@ -174,10 +250,10 @@
         <div class="row mb-5">
             <div class="col-12 text-center">
                 <span class="text-cursive h5 text-red d-block">Lets look how many animals actually are their in Australia..</span>
-                <h2 class="text-black">What numbers says? Lets find out..</h2>
+                <h2 class="text-black">What numbers says? Lets find out..*</h2>
+                <p class="text-dark">*Real numbers coming soon(Demo version)</p>
             </div>
         </div>
-
         <div class="row text-center">
             <div class="col">
                 <div class="counter">
@@ -211,31 +287,7 @@
     </div>
 </div>
 
-<div class="site-section">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-6">
-                <div class="block-2 red">
-                    <span class="wrap-icon">
-                        <span class="icon-child"></span>
-                    </span>
-                    <h2>Wild Kids</h2>
-                    <p>By analyzing children's preferences and learning characteristics, we designed interactive teaching models that are attractive to children. Children's attention is captured by video to study and learn about Australian wildlife, and the learning results are detected by interactive game mode to ensure the quality of children's learning.</p>
-                </div>
-            </div>
-            <div class="col-lg-6">
-                <div class="block-2 yellow">
-                    <span class="wrap-icon">
-                        <span class="icon-paw"></span>
-                    </span>
-                    <h2>Wild Learn</h2>
-                    <p>Wild HomeLearn is a non-profit online learning platform focusing on Australian ecosystems. We are committed to helping people learn about Australia's wildlife through our free policy. We focus on helping children living in Australia learn about their native wild animals and camping. Therefore we ensure the best qualit of knowledge to you.</p>
-                </div>
-            </div>
 
-        </div>
-    </div>
-</div>
 
 <script>
 
@@ -353,3 +405,8 @@
     });
 
 </script>
+
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+

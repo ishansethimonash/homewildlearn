@@ -1,91 +1,272 @@
 ﻿@model HomeWildLearn.Models.wildlife_details
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
+<link href="~/css/details.css" rel="stylesheet">
 
-<div>
-    <h4>wildlife_details</h4>
-    <hr />
-    <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Fact_1)
-        </dt>
+@*<div>
+        <h4>Animal</h4>
+        <button type="button" onclick="location.href='@Url.Action("ExportPDF","Animals", new {id = "id"}).Replace("id", Model.animal_id.ToString())'" class="btn btn-primary" align="center">Export as PDF</button>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.animal_name)
+            </dt>
 
-        <dd>
-            @Html.DisplayFor(model => model.Fact_1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Fact_2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Fact_2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Animal_Sound)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Animal_Sound)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Animal_Image_Main)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Animal_Image_Main)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Animal_Image_1)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Animal_Image_1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Animal_Image_2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Animal_Image_2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Animal_Image_3)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Animal_Image_3)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Animal_Image_4)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Animal_Image_4)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Animal_Image_5)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Animal_Image_5)
-        </dd>
-
-    </dl>
+            <dd>
+                @Html.DisplayFor(model => model.animal_name)
+            </dd>
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Edit", "Edit", new { id = Model.animal_id }) |
+        @Html.ActionLink("Back to List", "Index")
+    </p>*@
+<!-- Background image to take up space -->
+<div class="ftco-blocks-cover-1">
+    <div class="site-section overlay" data-stellar-background-ratio="0.5" style="background-image: url('/Content/images/koalas.jpg')">
+    </div>
 </div>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Animal_id }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+
+<!-- Page Content -->
+<div class="container mt-3">
+    <!-- Heading Row -->
+    <div class="row align-items-center my-5">
+        <div class="col-lg-7">
+            <img class="img-fluid rounded mb-4 mb-lg-0" src="@Html.DisplayFor(model => model.Animal_Image_Main)" style="width:634.98px; height: 423.15px;" alt="">
+        </div>
+        <!-- /.col-lg-8 -->
+        <div class="col-lg-5">
+            <h1 class="font-weight-light">@Html.DisplayFor(model => model.Animal.animal_name)</h1>
+            <p>@Html.DisplayFor(model => model.Animal.animal_desc)</p>
+            <div class="row">
+                <div class="col-md-6">
+                    <a class="btn btn-primary btn-space btn-sm mr-1 btn-block" data-toggle="modal" href="" data-target="#myModal">Picture Gallery</a>
+                    <button type="button" onclick="location.href='@Url.Action("ExportPDF","wildlife_details", new {id = "id"}).Replace("id", Model.Animal.animal_id.ToString())'" class="btn btn-primary btn-space btn-sm mr-1 btn-block">Download page</button>
+                    <div class="container">
+
+                        <!-- The Modal -->
+                        <div class="modal fade" id="myModal">
+                            <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <!-- Modal Header -->
+                                    <div class="modal-header">
+                                        <h4 class="modal-title">@Html.DisplayFor(model => model.Animal.animal_name) Gallery</h4>
+                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                    </div>
+                                    <!-- Modal body -->
+                                    <div class="modal-body">
+                                        <div class="container">
+                                            <div class="mySlides">
+                                                <div class="numbertext">1 / 5</div>
+                                                <img src="@Html.DisplayFor(model => model.Animal_Image_1)" style="width:100%">
+                                            </div>
+
+                                            <div class="mySlides">
+                                                <div class="numbertext">2 / 5</div>
+                                                <img src="@Html.DisplayFor(model => model.Animal_Image_2)" style="width:100%">
+                                            </div>
+
+                                            <div class="mySlides">
+                                                <div class="numbertext">3 / 5</div>
+                                                <img src="@Html.DisplayFor(model => model.Animal_Image_2)" style="width:100%">
+                                            </div>
+
+                                            <div class="mySlides">
+                                                <div class="numbertext">4 / 5</div>
+                                                <img src="@Html.DisplayFor(model => model.Animal_Image_4)" style="width:100%">
+                                            </div>
+
+                                            <div class="mySlides">
+                                                <div class="numbertext">5 / 5</div>
+                                                <img src="@Html.DisplayFor(model => model.Animal_Image_5)" style="width:100%">
+                                            </div>
+
+
+                                            <a class="prev" onclick="plusSlides(-1)">❮</a>
+                                            <a class="next" onclick="plusSlides(1)">❯</a>
+
+                                            <div class="caption-container">
+                                                <p id="caption"></p>
+                                            </div>
+
+                                            <div class="row">
+                                                <div class="column">
+                                                    <img class="demo cursor" src="@Html.DisplayFor(model => model.Animal_Image_1)" style="width:100%" onclick="currentSlide(1)">
+                                                </div>
+                                                <div class="column">
+                                                    <img class="demo cursor" src="@Html.DisplayFor(model => model.Animal_Image_2)" style="width:100%" onclick="currentSlide(2)">
+                                                </div>
+                                                <div class="column">
+                                                    <img class="demo cursor" src="@Html.DisplayFor(model => model.Animal_Image_3)" style="width:100%" onclick="currentSlide(3)">
+                                                </div>
+                                                <div class="column">
+                                                    <img class="demo cursor" src="@Html.DisplayFor(model => model.Animal_Image_4)" style="width:100%" onclick="currentSlide(4)">
+                                                </div>
+                                                <div class="column">
+                                                    <img class="demo cursor" src="@Html.DisplayFor(model => model.Animal_Image_5)" style="width:100%" onclick="currentSlide(5)">
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Modal footer -->
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- /.col-md-4 -->
+</div>
+<!-- /.row -->
+<!-- Call to Action Well -->
+<div class="card text-white bg-secondary my-5 py-0 text-center">
+    <div class="card-body">
+        <p class="text-white m-0">Read fun facts about @Html.DisplayFor(model => model.Animal.animal_name)</p>
+    </div>
+</div>
+<!-- Content Row -->
+<div class="row">
+    <div class="col-md-3 mb-5">
+        <div class="card h-100 bg-teal text-center">
+            <div class="card-body">
+                <h2 class="card-title">Fact 1</h2>
+                <p class="card-text">@Html.DisplayFor(model => model.Fact_1)</p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary btn-sm" disable>More Info</a>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-md-4 -->
+    <div class="col-md-3 mb-5">
+        <div class="card h-100 bg-teal text-center">
+            <div class="card-body">
+                <h2 class="card-title">Fact 2</h2>
+                <p class="card-text">@Html.DisplayFor(model => model.Fact_2)</p>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary btn-sm" disable>More Info</a>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-md-4 -->
+    <div class="col-md-3 mb-5" id="sec2">
+        <div class="card h-100 bg-teal text-center">
+            <div class="card-body">
+                <h2 class="card-title">Listen to a @Html.DisplayFor(model => model.Animal.animal_name)</h2>
+                <p class="card-text">Does it roar?</p>
+            </div>
+            <div class="card-footer">
+                <audio id="nyan" src="@Html.DisplayFor(model => model.Animal_Sound)" preload="metadata" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <a href="#sec2" class="btn btn-primary btn-sm" id="nyan-btn">
+                    Make Sound <i class="fa fa-play"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- /.col-md-4 -->
+    <div class="col-md-3 mb-5">
+        <div class="card h-100 bg-teal text-center">
+            <div class="card-body">
+                <h2 class="card-title">Location Card</h2>
+                <p class="card-text">Maybe you can find one in your backyard!</p>
+            </div>
+            <div class="card-footer">
+                @Html.ActionLink("Find " + @Html.DisplayFor(model => model.Animal.animal_name) + "s", "IndividualLocation", "wildlife_locations", new { animalName = Model.Animal.animal_name }, new { @class = "btn btn-primary btn-sm" })
+            </div>
+        </div>
+    </div>
+    <!-- /.col-md-4 -->
+</div>
+<!-- /.row -->
+</div>
+<!-- /.container -->
+<script>
+    var nyan = document.getElementById('nyan');
+    var nyanBtn = document.getElementById('nyan-btn');
+
+    function playPause(song) {
+        if (song.paused && song.currentTime >= 0 && !song.ended) {
+            song.play();
+        } else {
+            song.pause();
+        }
+    }
+
+    function reset(btn, song) {
+        if (btn.classList.contains('playing')) {
+            btn.classList.toggle('playing');
+        }
+        song.pause();
+        song.currentTime = 0;
+    }
+
+    function progress(btn, song) {
+        setTimeout(function () {
+            var end = song.duration;
+            var current = song.currentTime;
+            var percent = current / (end / 100);
+            //check if song is at the end
+            if (current == end) {
+                reset(btn, song);
+            }
+            //set inset box shadow
+            btn.style.boxShadow = "inset " + btn.offsetWidth * (percent / 100) + "px 0px 0px 0px rgba(0,0,0,0.125)"
+            //call function again
+            progress(btn, song);
+        }, 1000);
+    }
+
+    nyanBtn.addEventListener('click', function () {
+        nyanBtn.classList.toggle('playing');
+        playPause(nyan);
+        progress(nyanBtn, nyan);
+    });
+</script>
+
+<script>
+    var slideIndex = 1;
+    showSlides(slideIndex);
+
+    function plusSlides(n) {
+        showSlides(slideIndex += n);
+    }
+
+    function currentSlide(n) {
+        showSlides(slideIndex = n);
+    }
+
+    function showSlides(n) {
+        var i;
+        var slides = document.getElementsByClassName("mySlides");
+        var dots = document.getElementsByClassName("demo");
+        var captionText = document.getElementById("caption");
+        if (n > slides.length) { slideIndex = 1 }
+        if (n < 1) { slideIndex = slides.length }
+        for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";
+        }
+        for (i = 0; i < dots.length; i++) {
+            dots[i].className = dots[i].className.replace(" active", "");
+        }
+        slides[slideIndex - 1].style.display = "block";
+        dots[slideIndex - 1].className += " active";
+        captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+</script>

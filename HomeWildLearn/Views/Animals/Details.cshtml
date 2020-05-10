@@ -138,7 +138,7 @@
                     <p class="card-text">Maybe you can find one in your backyard!</p>
                 </div>
                 <div class="card-footer">
-                    @Html.ActionLink("Find "+@Html.DisplayFor(model => model.animal_name)+"s", "IndividualLocation", "wildlife_locations", new { animalName = Model.animal_name }, new { @class = "btn btn-primary btn-sm" })
+                    <a href="#" class="btn btn-primary btn-sm">Find @Html.DisplayFor(model => model.animal_name)s</a>
                 </div>
             </div>
         </div>

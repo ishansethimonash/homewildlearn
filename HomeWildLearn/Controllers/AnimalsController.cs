@@ -37,18 +37,33 @@ namespace HomeWildLearn.Controllers
             return View(animal);
         }
 
+
+        //public ActionResult ExportPDF(String id)
+        //{
+        //    Dictionary<string, string> cookieCollection = new Dictionary<string, string>();
+        //    foreach (var key in Request.Cookies.AllKeys)
+        //    {
+        //        cookieCollection.Add(key, Request.Cookies.Get(key).Value);
+        //    }
+        //    return new Rotativa.ActionAsPdf("Details/" + id)
+        //    {
+        //        FileName = Server.MapPath("~/Content/Det.pdf"),
+        //        Cookies = cookieCollection
+        //    };
+        //}
+
         //Method to export the details of an animal
         public ActionResult ExportPDF(String id)
         {
-            return new Rotativa.ActionAsPdf("Details/"+id);
+            return new Rotativa.ActionAsPdf("Details/" + id);
         }
 
 
-        // GET: Animals/Create
-        public ActionResult Create()
-        {
-            return View();
-        }
+        //// GET: Animals/Create
+        //public ActionResult Create()
+        //{
+        //    return View();
+        //}
 
         // POST: Animals/Create
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
