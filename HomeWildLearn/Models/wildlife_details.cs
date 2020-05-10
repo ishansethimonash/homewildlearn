@@ -5,6 +5,7 @@ namespace HomeWildLearn.Models
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web.Mvc;
 
     public partial class wildlife_details
     {
@@ -17,6 +18,7 @@ namespace HomeWildLearn.Models
 
 
         [Required]
+        [AllowHtml]
         public string Fact_1 { get; set; }
 
         public string Fact_2 { get; set; }

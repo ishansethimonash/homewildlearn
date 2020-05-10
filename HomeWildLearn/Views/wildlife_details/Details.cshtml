@@ -1,4 +1,4 @@
-﻿@model HomeWildLearn.Models.wildlife_details
+﻿﻿@model HomeWildLearn.Models.wildlife_details
 
 @{
     ViewBag.Title = "Index";
@@ -9,6 +9,213 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <link href="~/css/details.css" rel="stylesheet">
+<style>
+
+
+
+    .buttons {
+        margin-top: 25px;
+    }
+
+    button {
+        background: none;
+        border: none;
+        cursor: pointer;
+        height: 48px;
+        outline: none;
+        padding: 0;
+        width: 48px;
+    }
+
+    #play {
+        background-image: url(https://rpsthecoder.github.io/js-speech-synthesis/play.svg);
+    }
+
+        #play.played {
+            background-image: url(https://rpsthecoder.github.io/js-speech-synthesis/play1.svg);
+        }
+
+    #pause {
+        background-image: url(https://rpsthecoder.github.io/js-speech-synthesis/pause.svg);
+    }
+
+        #pause.paused {
+            background-image: url(https://rpsthecoder.github.io/js-speech-synthesis/pause1.svg);
+        }
+
+    #stop {
+        background-image: url(https://rpsthecoder.github.io/js-speech-synthesis/stop.svg);
+    }
+
+        #stop.stopped {
+            background-image: url(https://rpsthecoder.github.io/js-speech-synthesis/stop1.svg);
+        }
+
+
+    .media (max-width: 700px) {
+        html
+
+    {
+        font-size: 14pt;
+    }
+
+    article {
+        width: 90%;
+    }
+
+    }
+
+
+
+    /*  demo decor */
+
+    #-demo-title {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        height: 36px;
+        background-color: #D5FFD1;
+        color: #0F316C;
+        line-height: 36px;
+        font-weight: bold;
+        font-size: 16pt;
+        text-align: center;
+    }
+
+    #-demo-profile {
+        float: left;
+        height: 100%;
+        opacity: .4;
+    }
+
+        #-demo-profile:hover {
+            opacity: 1;
+        }
+
+    .media (max-width: 400px) {
+        #-demo-title
+
+    {
+        font-size: 12pt;
+    }
+    }
+</style>
+<script>
+    onload = function () {
+        if ('speechSynthesis' in window) with (speechSynthesis) {
+
+            var playEle = document.querySelector('#play');
+            var playEle1 = document.querySelector('#play1');
+            var playEle2 = document.querySelector('#play2');
+            var pauseEle = document.querySelector('#pause');
+            var stopEle = document.querySelector('#stop');
+            var flag = false;
+
+            playEle.addEventListener('click', onClickPlay);
+            playEle1.addEventListener('click', onClickPlayFact1);
+            playEle2.addEventListener('click', onClickPlayFact2);
+            pauseEle.addEventListener('click', onClickPause);
+            stopEle.addEventListener('click', onClickStop);
+
+            function onClickPlay() {
+                console.log("HI THERE")
+                if (!flag) {
+                    flag = true;
+                    utterance = new SpeechSynthesisUtterance(document.querySelector('article').textContent);
+                    utterance.voice = getVoices()[0];
+                    utterance.onend = function () {
+                        flag = false;
+                        playEle.className = pauseEle.className = '';
+                        stopEle.className = 'stopped';
+                    };
+                    playEle.className = 'played';
+                    stopEle.className = '';
+                    speak(utterance);
+                }
+                if (paused) { /* unpause/resume narration */
+                    playEle.className = 'played';
+                    pauseEle.className = '';
+                    resume();
+                }
+            }
+
+            function onClickPlayFact1() {
+                console.log("HI THERE1")
+                if (!flag) {
+                    flag = true;
+                    utterance = new SpeechSynthesisUtterance(document.querySelector('article.fact1').textContent);
+                    utterance.voice = getVoices()[0];
+                    utterance.onend = function () {
+                        flag = false;
+                        playEle.className = pauseEle.className = '';
+                        stopEle.className = 'stopped';
+                    };
+                    playEle.className = 'played';
+                    stopEle.className = '';
+                    speak(utterance);
+                }
+                if (paused) { /* unpause/resume narration */
+                    playEle.className = 'played';
+                    pauseEle.className = '';
+                    resume();
+                }
+            }
+
+            function onClickPlayFact2() {
+                console.log("HI THERE2")
+                if (!flag) {
+                    flag = true;
+                    utterance = new SpeechSynthesisUtterance(document.querySelector('article.fact2').textContent);
+                    utterance.voice = getVoices()[0];
+                    utterance.onend = function () {
+                        flag = false;
+                        playEle.className = pauseEle.className = '';
+                        stopEle.className = 'stopped';
+                    };
+                    playEle.className = 'played';
+                    stopEle.className = '';
+                    speak(utterance);
+                }
+                if (paused) { /* unpause/resume narration */
+                    playEle.className = 'played';
+                    pauseEle.className = '';
+                    resume();
+                }
+            }
+
+            function onClickPause() {
+                if (speaking && !paused) { /* pause narration */
+                    pauseEle.className = 'paused';
+                    playEle.className = '';
+                    pause();
+                }
+            }
+
+            function onClickStop() {
+                if (speaking) { /* stop narration */
+                    /* for safari */
+                    stopEle.className = 'stopped';
+                    playEle.className = pauseEle.className = '';
+                    flag = false;
+                    cancel();
+
+                }
+            }
+
+        }
+
+        else { /* speech synthesis not supported */
+            msg = document.createElement('h5');
+            msg.textContent = "Detected no support for Speech Synthesis";
+            msg.style.textAlign = 'center';
+            msg.style.backgroundColor = 'red';
+            msg.style.color = 'white';
+            msg.style.marginTop = msg.style.marginBottom = 0;
+            document.body.insertBefore(msg, document.querySelector('div'));
+        }
+
+    }</script>
+
 
 @*<div>
         <h4>Animal</h4>
@@ -29,12 +236,17 @@
         @Html.ActionLink("Back to List", "Index")
     </p>*@
 <!-- Background image to take up space -->
+
+
+
+
 <div class="ftco-blocks-cover-1">
     <div class="site-section overlay" data-stellar-background-ratio="0.5" style="background-image: url('/Content/images/koalas.jpg')">
     </div>
 </div>
 
 <!-- Page Content -->
+
 <div class="container mt-3">
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
@@ -43,8 +255,16 @@
         </div>
         <!-- /.col-lg-8 -->
         <div class="col-lg-5">
-            <h1 class="font-weight-light">@Html.DisplayFor(model => model.Animal.animal_name)</h1>
-            <p>@Html.DisplayFor(model => model.Animal.animal_desc)</p>
+
+            <article>
+                <h1 class="font-weight-light">@Html.DisplayFor(model => model.Animal.animal_name)</h1>
+                <div class=buttons>
+                    <button id=play></button> &nbsp;
+                    <button id=pause></button> &nbsp;
+                    <button id=stop></button>
+                </div>
+                <p>@Html.DisplayFor(model => model.Animal.animal_desc)</p>
+            </article>
             <div class="row">
                 <div class="col-md-6">
                     <a class="btn btn-primary btn-space btn-sm mr-1 btn-block" data-toggle="modal" href="" data-target="#myModal">Picture Gallery</a>
@@ -133,39 +353,49 @@
 </div>
 <!-- /.row -->
 <!-- Call to Action Well -->
-<div class="card text-white bg-secondary my-5 py-0 text-center">
+<div class="card text-white bg-secondary my-5 py-0 text-center rounded">
     <div class="card-body">
         <p class="text-white m-0">Read fun facts about @Html.DisplayFor(model => model.Animal.animal_name)</p>
     </div>
 </div>
 <!-- Content Row -->
-<div class="row">
+<div class="row mx-1">
     <div class="col-md-3 mb-5">
-        <div class="card h-100 bg-teal text-center">
+        <div class="card h-100 bg-warning text-center">
             <div class="card-body">
-                <h2 class="card-title">Fact 1</h2>
-                <p class="card-text">@Html.DisplayFor(model => model.Fact_1)</p>
+                <article class="fact1">
+                    <h2 class="card-title">Fact 1</h2>
+                    @*<p class="card-text">@Html.Raw(@Html.DisplayFor(model => model.Fact_1).ToHtmlString())</p>*@
+                    <p class="card-text">@Html.Raw(Model.Fact_1)</p>
+                </article>
             </div>
             <div class="card-footer">
-                <a class="btn btn-primary btn-sm" disable>More Info</a>
+                <a href="javascript:void(0);" class="btn btn-primary btn-sm" id="play1">
+                    Listen to this fact <i class="fa fa-play"></i>
+                </a>
             </div>
         </div>
     </div>
     <!-- /.col-md-4 -->
     <div class="col-md-3 mb-5">
-        <div class="card h-100 bg-teal text-center">
+        <div class="card h-100 badge-success text-center">
             <div class="card-body">
-                <h2 class="card-title">Fact 2</h2>
-                <p class="card-text">@Html.DisplayFor(model => model.Fact_2)</p>
+                <article class="fact2">
+                    <h2 class="card-title">Fun Fact 2</h2>
+                    <p class="card-text">@Html.DisplayFor(model => model.Fact_2)</p>
+                </article>
             </div>
             <div class="card-footer">
-                <a class="btn btn-primary btn-sm" disable>More Info</a>
+                <a href="javascript:void(0);" class="btn btn-primary btn-sm" id="play2">
+                    Listen to this fact <i class="fa fa-play"></i>
+                </a>
             </div>
+
         </div>
     </div>
     <!-- /.col-md-4 -->
     <div class="col-md-3 mb-5" id="sec2">
-        <div class="card h-100 bg-teal text-center">
+        <div class="card h-100 bg-info text-center">
             <div class="card-body">
                 <h2 class="card-title">Listen to a @Html.DisplayFor(model => model.Animal.animal_name)</h2>
                 <p class="card-text">Does it roar?</p>
@@ -184,8 +414,9 @@
     <div class="col-md-3 mb-5">
         <div class="card h-100 bg-teal text-center">
             <div class="card-body">
-                <h2 class="card-title">Location Card</h2>
-                <p class="card-text">Maybe you can find one in your backyard!</p>
+                <h2 class="card-title">Find Me!</h2>
+                <span class=""><img src="https://image.flaticon.com/icons/svg/664/664554.svg" alt="Image" width="300" height="150"></span>
+                <p class="card-text">Click the button below. Is there one in your backyard?!</p>
             </div>
             <div class="card-footer">
                 @Html.ActionLink("Find " + @Html.DisplayFor(model => model.Animal.animal_name) + "s", "IndividualLocation", "wildlife_locations", new { animalName = Model.Animal.animal_name }, new { @class = "btn btn-primary btn-sm" })
@@ -237,8 +468,7 @@
         nyanBtn.classList.toggle('playing');
         playPause(nyan);
         progress(nyanBtn, nyan);
-    });
-</script>
+    });</script>
 
 <script>
     var slideIndex = 1;
@@ -268,5 +498,4 @@
         slides[slideIndex - 1].style.display = "block";
         dots[slideIndex - 1].className += " active";
         captionText.innerHTML = dots[slideIndex - 1].alt;
-    }
-</script>
+    }</script>
