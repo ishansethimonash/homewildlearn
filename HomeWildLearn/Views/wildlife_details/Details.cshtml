@@ -28,27 +28,46 @@
     }
 
     #play {
-        background-image: url(https://rpsthecoder.github.io/js-speech-synthesis/play.svg);
+        /*background-image: url(https://rpsthecoder.github.io/js-speech-synthesis/play.svg);*/
+        background: url("https://image.flaticon.com/icons/svg/2468/2468825.svg") no-repeat top;
+        background-size: 70px 50px;
+        height: 70px;
+        width: 80px;
     }
 
         #play.played {
-            background-image: url(https://rpsthecoder.github.io/js-speech-synthesis/play1.svg);
+            background: url("https://image.flaticon.com/icons/svg/2468/2468801.svg") no-repeat top;
+            background-size: 70px 50px;
+            height: 70px;
+            width: 80px;
         }
 
     #pause {
-        background-image: url(https://rpsthecoder.github.io/js-speech-synthesis/pause.svg);
+        background: url(https://image.flaticon.com/icons/svg/2468/2468816.svg) no-repeat top;
+        background-size: 70px 50px;
+        height: 70px;
+        width: 80px;
     }
 
         #pause.paused {
-            background-image: url(https://rpsthecoder.github.io/js-speech-synthesis/pause1.svg);
+            background: url(https://image.flaticon.com/icons/svg/2468/2468794.svg) no-repeat top;
+            background-size: 70px 50px;
+            height: 70px;
+            width: 80px;
         }
 
     #stop {
-        background-image: url(https://rpsthecoder.github.io/js-speech-synthesis/stop.svg);
+        background: url('../../Content/fonts/flaticon/stop-button.svg') no-repeat top;
+        background-size: 70px 50px;
+        height: 70px;
+        width: 80px;
     }
 
         #stop.stopped {
-            background-image: url(https://rpsthecoder.github.io/js-speech-synthesis/stop1.svg);
+            background: url(https://image.flaticon.com/icons/svg/2468/2468884.svg) no-repeat top;
+            background-size: 70px 50px;
+            height: 70px;
+            width: 80px;
         }
 
 
@@ -251,24 +270,28 @@
     <!-- Heading Row -->
     <div class="row align-items-center my-5">
         <div class="col-lg-7">
-            <img class="img-fluid rounded mb-4 mb-lg-0" src="@Html.DisplayFor(model => model.Animal_Image_Main)" style="width:634.98px; height: 423.15px;" alt="">
+            <img class="img-fluid rounded mb-4 mb-lg-0" src="@Html.DisplayFor(model => model.Animal_Image_Main)" alt="">
         </div>
         <!-- /.col-lg-8 -->
         <div class="col-lg-5">
 
+
+            <h1 class="font-weight-light">@Html.DisplayFor(model => model.Animal.animal_name)</h1>
+            <div class=buttons>
+                <button id=play><p class="mt-5">Listen!</p></button> &nbsp;
+                <button id=pause><p class="mt-5">Pause</p></button> &nbsp;
+                <button id=stop><p class="mt-5">Stop</p></button>
+            </div>
             <article>
-                <h1 class="font-weight-light">@Html.DisplayFor(model => model.Animal.animal_name)</h1>
-                <div class=buttons>
-                    <button id=play></button> &nbsp;
-                    <button id=pause></button> &nbsp;
-                    <button id=stop></button>
-                </div>
-                <p>@Html.DisplayFor(model => model.Animal.animal_desc)</p>
+                <p style="font-weight: bold; text-align:center"><br><b><u>About @Html.DisplayFor(model => model.Animal.animal_name)</u></b></p>
+                <p>@Html.Raw(Model.Animal.animal_desc)</p>
             </article>
             <div class="row">
-                <div class="col-md-6">
-                    <a class="btn btn-primary btn-space btn-sm mr-1 btn-block" data-toggle="modal" href="" data-target="#myModal">Picture Gallery</a>
-                    <button type="button" onclick="location.href='@Url.Action("ExportPDF","wildlife_details", new {id = "id"}).Replace("id", Model.Animal.animal_id.ToString())'" class="btn btn-primary btn-space btn-sm mr-1 btn-block">Download page</button>
+                <div class="col-md-12">
+                    <div style="display: inline-block">
+                        <a class="btn btn-primary btn-space btn-custom-1 mr-1" data-toggle="modal" href="" data-target="#myModal">Pictures!</a>
+                        <a href="#" onclick="location.href='@Url.Action("ExportPDF","wildlife_details", new {id = "id"}).Replace("id", Model.Animal.animal_id.ToString())'" class="btn btn-secondary btn-space btn-custom-1 mr-1">Download</a>
+                    </div>
                     <div class="container">
 
                         <!-- The Modal -->
@@ -355,16 +378,16 @@
 <!-- Call to Action Well -->
 <div class="card text-white bg-secondary my-5 py-0 text-center rounded">
     <div class="card-body">
-        <p class="text-white m-0">Read fun facts about @Html.DisplayFor(model => model.Animal.animal_name)</p>
+        <p class="text-white m-0" style="font-size:1.25rem;">All Things @Html.DisplayFor(model => model.Animal.animal_name)</p>
     </div>
 </div>
 <!-- Content Row -->
 <div class="row mx-1">
     <div class="col-md-3 mb-5">
-        <div class="card h-100 bg-warning text-center">
+        <div class="card h-100 bg-teal text-center">
             <div class="card-body">
                 <article class="fact1">
-                    <h2 class="card-title">Fact 1</h2>
+                    <h2 class="card-title">Fun Fact 1</h2>
                     @*<p class="card-text">@Html.Raw(@Html.DisplayFor(model => model.Fact_1).ToHtmlString())</p>*@
                     <p class="card-text">@Html.Raw(Model.Fact_1)</p>
                 </article>
@@ -382,7 +405,7 @@
             <div class="card-body">
                 <article class="fact2">
                     <h2 class="card-title">Fun Fact 2</h2>
-                    <p class="card-text">@Html.DisplayFor(model => model.Fact_2)</p>
+                    <p class="card-text">@Html.Raw(Model.Fact_2)</p>
                 </article>
             </div>
             <div class="card-footer">
@@ -398,6 +421,7 @@
         <div class="card h-100 bg-info text-center">
             <div class="card-body">
                 <h2 class="card-title">Listen to a @Html.DisplayFor(model => model.Animal.animal_name)</h2>
+                <span> <img src="https://image.flaticon.com/icons/svg/2590/2590162.svg" alt="Image" width="300" height="150"> </span>
                 <p class="card-text">Does it roar?</p>
             </div>
             <div class="card-footer">
@@ -412,7 +436,7 @@
     </div>
     <!-- /.col-md-4 -->
     <div class="col-md-3 mb-5">
-        <div class="card h-100 bg-teal text-center">
+        <div class="card h-100 bg-warning text-center">
             <div class="card-body">
                 <h2 class="card-title">Find Me!</h2>
                 <span class=""><img src="https://image.flaticon.com/icons/svg/664/664554.svg" alt="Image" width="300" height="150"></span>

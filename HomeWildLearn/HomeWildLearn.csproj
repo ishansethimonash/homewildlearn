@@ -239,6 +239,8 @@
     <Content Include="Content\emu.jpg" />
     <Content Include="Content\emu.mp4" />
     <Content Include="Content\exp.jpg" />
+    <Content Include="Content\fonts\flaticon\multimedia.svg" />
+    <Content Include="Content\fonts\flaticon\stop-button.svg" />
     <Content Include="Content\images\animals\Canva - Emu On Ground.jpg" />
     <Content Include="Content\images\animals\cass.jpg" />
     <Content Include="Content\images\animals\devil.jpg" />

@@ -16,7 +16,6 @@ namespace HomeWildLearn.Models
         [ForeignKey("Animal_id")]
         public virtual Animal Animal { get; set; }
 
-
         [Required]
         [AllowHtml]
         public string Fact_1 { get; set; }
