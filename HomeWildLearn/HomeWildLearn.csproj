@@ -668,6 +668,7 @@
     <Content Include="Views\wildlife_details\Details.cshtml" />
     <Content Include="Views\wildlife_details\Edit.cshtml" />
     <Content Include="Views\wildlife_locations\IndividualLocation.cshtml" />
+    <Content Include="Views\Shared\_Layout2.cshtml" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>

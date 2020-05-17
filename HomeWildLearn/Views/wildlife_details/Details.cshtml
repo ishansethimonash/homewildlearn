@@ -9,6 +9,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
 <link href="~/css/details.css" rel="stylesheet">
+
 <style>
 
 
@@ -450,8 +451,13 @@
     <!-- /.col-md-4 -->
 </div>
 <!-- /.row -->
-</div>
 <!-- /.container -->
+
+<div class="row mx-1">
+    <div class="embed-responsive embed-responsive-16by9">
+        <iframe scrolling="no" class="embed-responsive-item" src="/wildlife_locations/IndividualLocation?animalName=@Html.DisplayFor(model => model.Animal.animal_name)"></iframe>
+    </div>
+</div>
 <script>
     var nyan = document.getElementById('nyan');
     var nyanBtn = document.getElementById('nyan-btn');
